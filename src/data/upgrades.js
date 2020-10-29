@@ -8,16 +8,6 @@ module.exports = [{
 	alliance: true,
 	factions: ["federation"]
 }, {
-	type: "crew",
-	id: "C358",
-	set: ["80001"],
-	name: "Prudent Andorian",
-	cost: 8,
-	text: "This crew works with Utopia and is still learning",
-	OnePerShip: true,
-	alliance: false,
-	factions: ["independent"]
-}, {
 	type: "tech",
 	id: "T253",
 	set: ["80001"],
