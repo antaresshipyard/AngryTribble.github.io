@@ -24,7 +24,7 @@
 				<div class="u-title"><i class="fs fs-unique"></i>Utopia Set Viewer</div>
 
 				<div class="text-center">Build your fleet with <a href="./index.html">Utopia</a></div>
-        <div class="text-center">A sorted list of the current <a href="./FAQ.html">FAQ</a></div>
+         <div class="text-center">A sorted list of the current <a href="./FAQ.html">FAQ</a></div>
 
 				<ul class="set-list">
 					<li ng-repeat="set in setList | orderBy:'-releaseDate'" ng-click="viewer.set = set" ng-class="{'set-selected': viewer.set == set}">{{set.parentSet}}: {{set.name}}</li>
