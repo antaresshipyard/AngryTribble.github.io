@@ -196,7 +196,7 @@ module.exports = [{
 	name: "B'Elanna Torres",
 	cost: 3,
 	unique: true,
-	text: "Add 1 [borg] to this ship's Upgrade Bar. The [borg] Upgrade equipped to this ship useing that [borg] Upgrade Slot cost -1SP for each empty slot on that ships Upgrade Bar",
+	text: "Add 1 [borg] to this ship's Upgrade Bar. The [borg] Upgrade equipped to this ship using that [borg] Upgrade Slot cost -1SP for each unused Upgrade Slot on this ship's printed Upgrade Bar",
 	factions: ["federation","borg"]
 }, {
 	type: "crew",
@@ -546,7 +546,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Hikaru Sulu",
 	cost: 3,
-	text: "<b>WHEN THIS SHIP WOULD SUFFER DAMAGE FROM AN OBSTACLE OR MINEFIELD TOKEN:</b> Place 3 [time] Tokens on this card and roll 3 defence dice.\n\nFor each [evade] cancel 1 [hit] or [crit].",
+	text: "<b>WHEN THIS SHIP WOULD SUFFER DAMAGE FROM AN OBSTACLE OR MINEFIELD TOKEN:</b> Place 3 [time] Tokens on this card and roll 3 defence dice.\n\nFor each [evade], cancel 1 [hit] or [crit].",
 	unique: true,
 	specialization: true,
 	factions: ["mirror-universe","federation"]
@@ -576,7 +576,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Leonard Mccoy",
 	cost: 3,
-	text: "<b>WHEN A CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISABLED</b>\nPlace 3 [time] Tokens on this card instead.\n----------------------------------------\n<b>WHEN A CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISCARDED</b>\nPlace 2 [time] Tokens on this card and the Captain that would be discarded instead.",
+	text: "<b>WHEN A CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISABLED:</b>\nPlace 3 [time] Tokens on this card instead.\n----------------------------------------\n<b>WHEN A CAPTAIN EQUIPPED TO THIS SHIP WOULD BE DISCARDED:</b>\nPlace 2 [time] Tokens on this card and the Captain that would be discarded instead.",
 	unique: true,
 	specialization: true,
 	factions: ["mirror-universe","federation"]
@@ -617,7 +617,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Nyota Uhura",
 	cost: 3,
-	text: "<b>WHEN THIS CARD IS FLIPPED FACE UP OR AFTER THIS SHIP SUFFERS CRITICAL DAMAGE:</b>\n\nDiscard alll face up 'Communications Failurs' damage cards beside this ships Ship Card.",
+	text: "<b>WHEN THIS CARD IS FLIPPED FACE UP OR AFTER THIS SHIP SUFFERS CRITICAL DAMAGE:</b>\n\nDiscard all face up 'Communications Failure' damage cards beside this ship's Ship Card.",
 	unique: true,
 	specialization: true,
 	factions: ["mirror-universe","federation"]
@@ -627,7 +627,7 @@ module.exports = [{
 	set: ["75005"],
 	name: "Nyota Uhura",
 	cost: 3,
-	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card and target this ship or a friendly ship.\nnIncrease the Range of all Upgrades equipped to the target ship by 1 this game round (Max Range 3).",
+	text: "<b>ACTIVATION PHASE:</b> Place 3 [time] Tokens on this card and target this ship or a friendly ship.\nIncrease the Range of all Upgrades equipped to the target ship by 1 this game round (Max Range 3).",
 	unique: true,
 	specialization: true,
 	range: "1 - 2",
@@ -2060,7 +2060,7 @@ module.exports = [{
 	set: ["72011wp"],
 	name: "David Marcus",
 	cost: 3,
-	text: "<b>IF A [crew] Upgrade equipped to this ship would be discarded</b>\nDiscard this card instead\n\n<b>When Defending:</b> Discard this card. Add 1 [evade]",
+	text: "<b>IF A [crew] UPGRADE EQUIPPED TO THIS SHIP WOULD BE DISCARDED:</b>\nDiscard this card instead.\n\n<b>WHEN DEFENDING:</b> Discard this card. Add 1 [evade].",
 	unique: true,
 	factions: ["federation"]
 }, {
@@ -2070,7 +2070,7 @@ module.exports = [{
 	name: "Saavik",
 	cost: 1,
 	range: "1 - 2",
-	text: "<b>WHEN DEFENDING:</b> If this ship is within Range of a Planet token.\n\nThis ship may convert one [blank] into 1 [evade].",
+	text: "<b>WHEN DEFENDING:</b> If this ship is within Range of a Planet Token:\n\nThis ship may convert 1 [blank] into 1 [evade].",
 	unique: true,
 	factions: ["federation"]
 }, {
@@ -2079,7 +2079,7 @@ module.exports = [{
 	set: ["72011wp"],
 	name: "Federation Helmsman",
 	cost: 3,
-	text: "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 straight or bank Maneuver.",
+	text: "<b>ACTION:</b> Place an [aux] Token beside this ship.\n\nPerfrom a White 1 [straight], 1 [bank-left] or 1 [bank-right] Maneuver.",
 	unique: false,
 	factions: ["federation"]
 }, {
@@ -3798,7 +3798,7 @@ module.exports = [{
 	set: ["71221"],
 	name: "Dorian Collins",
 	cost: 2,
-	text: "If your ship suffers damage to its Hull you may immediately disable this card to repair 1 Shield.",
+	text: "If your ship suffers damage to its Hull, you may immediately disable this card to repair 1 Shield.",
 	unique: true,
 	factions: ["federation"]
 }, {
@@ -11417,7 +11417,7 @@ module.exports = [{
 	set: ["72011"],
 	name: "Elizabeth Lense",
 	cost: 1,
-	text: "At any time, you may discard this card to remove 1 Disabled Upgrade Token from one of your [crew] or [tech] Upgrades and then place 2 Time Tokens on that Upgrade.",
+	text: "At any time, you may discard this card to remove 1 disabled Upgrade Token from one of your [crew] or [tech] Upgrades and then place 2 Time Tokens on that Upgrade.",
 	unique: true,
 	factions: ["federation"]
 }, {
