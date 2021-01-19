@@ -494,7 +494,7 @@ module.exports = [{
 	set: ["75004"],
 	name: "Michael Jonas",
 	cost: 3,
-	text: "<b>PLANNING PAHSE:</b> Place 2 [time] Tokens on this card and target an opposing ship.\n\nThe target ship cannot perform a maneuver with a speed greater than 2 this game round.",
+	text: "<b>PLANNING PHASE:</b> Place 2 [time] Tokens on this card and target an opposing ship.\n\nThe target ship cannot perform a maneuver with a speed greater than 2 this game round.",
 	unique: true,
 	range: "1 - 2",
 	factions: ["independent"]
