@@ -239,6 +239,25 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 
+//Alliance
+		//Photon Torpedoes
+		"weapon:W204":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+			},
+			attack: 0,
+			intercept: {
+				self: {
+					// Attack is same as ship primary + 1
+					attack: function(upgrade,ship,fleet,attack) {
+						if( ship )
+							return valueOf(ship,"attack",ship,fleet) + 1;
+						return attack;
+					}
+				}
+			}
+		},
+
 	//Core Starter Set :71120
 		//Will Riker 6
 		"captain:Cap646":{

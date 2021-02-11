@@ -1,4 +1,193 @@
-module.exports = [{
+module.exports = [
+	{
+		type:"tech",
+		id:"T259",
+		set:["80001"],
+		name:"Subspace Field",
+		cost: 4,
+		text: "<b>ACTION:</b> Discard this card.\n\nRemove all [aux] Tokens beside all ships.",
+		range: " 1 ",
+		alliance: true,
+		factions: ["federation"]
+	},{
+		type:"tech",
+		id:"T258",
+		set:["80001"],
+		name:"Improved Hull Plating",
+		cost: 2,
+		text: "<b>WHEN DEFENDING:</b> During the Modify Attack Dice Step:\n\nConvert 1 [crit] into 1 [hit].",
+		alliance: true,
+		factions: ["federation"]
+	},{
+		type:"tech",
+		id:"T257",
+		set:["80001"],
+		name:"EMH",
+		cost: 4,
+		text: "<b>PLANNING PHASE:</b> Place 2 [time] Tokens on this card.\n\nRemove 1 Disabled Token on a [crew] Upgrade equipped to this ship.",
+		alliance: true,
+		factions: ["federation"]
+	},{
+	type:"tech",
+	id:"T256",
+	set:["80001"],
+	name:"Impulse Efficiency",
+	cost: 2,
+	text: "<b>EXECUTE MANEUVER STEP:</b> If this ship performs a white maneuver, place 2 [time] Tokens on this card.\n\nRemove 1 [aux] Token beside this ship.",
+	alliance: true,
+	factions: ["federation"]
+},{
+		type: "weapon",
+		id: "W207",
+		set: ["80001"],
+		name: "Enhanced Targeting",
+		text: "<b>WHEN ATTACKING:</b>\n\nThis ship may re-roll 1 attack die.",
+		cost: 4,
+		OnePerShip: true,
+		factions: ["federation"],
+		alliance: true
+	},{
+		type: "weapon",
+		id: "W205",
+		set: ["80001"],
+		name: "Overcharged Phasers",
+		text: "<b>WHEN ATTACKING WITH THIS SHIP'S PRIMARY WEAPON:</b>\n\nRoll +1 Attack die.",
+		cost: 3,
+		range: " 2 ",
+		OnePerShip: true,
+		factions: ["federation"],
+		alliance: true
+	},{
+ 		type: "weapon",
+ 		id: "W204",
+ 		set: ["80001"],
+ 		name: "Photon Torpedoes",
+		text: "The Attack Value of this [weapon] is this ship's Primary Weapon Value +1.\n---------------------------------\n<b>ATTACK:</b> Spend this ship's  [target-lock] Token, disable this card and target an opposing ship.\n\nThis ship may convert all [blank]  into [battlestations].",
+		FrontArc: true,
+		RearArc: true,
+		cost: 2,
+		range: "2 - 3",
+		factions: ["federation"],
+ 		alliance: true
+ 	},{
+		type: "crew",
+		id: "C362",
+		set: ["80001"],
+		name: "Commander",
+		OnePerShip: true,
+		text: "<b>ACTION:</b>\n\nPlace 1 [battlestations] Token and 1 [evade] Token beside this ship.",
+		factions: ["federation"],
+		cost: 5,
+		alliance: true
+	},{
+		type: "crew",
+		id: "C361",
+		set: ["80001"],
+		name: "Helmsman",
+		OnePerShip: true,
+		text: "<b>ACTIVATION PHASE:</b> When this ship's maneuver is revealed, disable this card.\n\nIncrease or decrease the maneuver's speed by 1, even if this results in a maneuver that does not appear on this ship's Maneuver Dial.",
+		factions: ["federation"],
+		cost: 3,
+		alliance: true
+	},{
+		type: "crew",
+		id: "C360",
+		set: ["80001"],
+		name: "Tactical Officer",
+		OnePerShip: true,
+		text: "<b>WHEN ATTACKING:</b> Disable this card.\n\nRe-roll any number of attack dice.",
+		factions: ["federation"],
+		cost: 4,
+		alliance: true
+	},{
+		type: "crew",
+		id: "C359",
+		set: ["80001"],
+		name: "Operations Officer",
+		OnePerShip: true,
+		text: "<b>END PHASE:</b> Spend an [evade] Token beside this ship.\n\nRepair 1 Shield on this ship.",
+		factions: ["federation"],
+		cost: 2,
+		alliance: true
+	},{
+	type:"talent",
+	id:"E203",
+	set:["80001"],
+	name:"Wing Leader",
+	cost: 3,
+	text:"<b>WHEN A FRIENDLY SHIP WITHIN RANGE IS ATTACKING OR DEFENDING:</b>\n\nThat ship may re-roll 1 [battlestations].",
+	alliance: true,
+	range: " 1 ",
+	unique: true,
+	factions: ["federation"]
+ },{
+	type:"talent",
+	id:"E202",
+	set:["80001"],
+	name:"Battle-Hardened",
+	cost: 4,
+	text:"<b>WHEN THIS SHIP SPENDS A [battlestations] TOKEN:</b> Place 1 [time] Token on this card.\n\nPlace a [battlestations] Token beside this ship.",
+	alliance: true,
+	OnePerShip: true,
+	factions: ["federation"]
+ },{
+	type:"talent",
+	id:"E201",
+	set:["80001"],
+	name:"Evasive Pattern Delta",
+	cost: 3,
+	text:"<b>COMBAT PHASE:</b> Spend an [evade] Token beside this ship and discard this card.\n\nPerform a maneuver with a speed of 2 on this ship's maneuver dial.",
+	alliance: true,
+	unique: true,
+	factions: ["federation"]
+ },{
+ 	type:"talent",
+ 	id:"E200",
+ 	set:["80001"],
+ 	name:"Calculating",
+ 	cost: 1,
+ 	text:"<b>ACTIVATION PHASE:</b> Discard this card.\n\nThis game round, the Captain Skill of the Captain equipped to this ship is 10.",
+ 	alliance: true,
+ 	OnePerShip: true,
+ 	factions: ["federation"]
+ },{
+		type: "weapon",
+		id: "W203",
+		set: ["80001"],
+		name: "Dorsal Phaser Array",
+		OnePerShip: true,
+		text: "<b>ATTACK:</b> Target an opposing ship.\n\nThis ship may fire this [weapon] in any direction.",
+		factions: ["federation"],
+		cost: 3,
+		attack: 3,
+		range: "1 - 2",
+		alliance: true
+	},{
+		type: "weapon",
+		id: "W202",
+		set: ["80001"],
+		name: "Quantum Torpedoes",
+		unique: false,
+		text: "<b>ATTACK:</b> Spend this ship's     [target-lock] Token, disable this card, and target an opposing ship.  \n\nIf the defending ship is hit, add 1 [hit].",
+		factions: ["federation"],
+		cost: 6,
+		skill: 0,
+		RearArc: true,
+		FrontArc: true,
+		attack: 5,
+		range: "2 - 3",
+		alliance: true
+	},{
+		type: "crew",
+		id: "C358",
+		set: ["80001"],
+		name: "Science Officer",
+		OnePerShip: true,
+		text: "<b>ACTION:</b>\n\nPlace 2 [scan] Tokens beside this ship.",
+		factions: ["federation"],
+		cost: 3,
+		alliance: true
+	},{
 	type:"tech",
 	id:"T255",
 	set:["80001"],
@@ -25,8 +214,8 @@ module.exports = [{
 	id: "T254",
 	set: ["80001"],
 	name: "Impulse Upgrade",
-	cost: 2,
-	text: "Treat this ships 2 [bank-left], 2 [straight], and 2 [bank-right] maneuvers as green.",
+	cost: 1,
+	text: "Treat this ship's 2 [bank-left], 2 [straight], and 2 [bank-right] maneuvers as green.",
 	alliance: true,
 	factions: ["federation"]
 }, {
@@ -35,9 +224,9 @@ module.exports = [{
 	set: ["80001"],
 	name: "Reinforced Shielding",
 	cost: 3,
-	text: "<b>SETUP:</b> This ships Shield Value is its printed Shield Value +2.",
-	OnePerShip: true,
+	text: "Add +2 to this ship's Shield Value.",
 	alliance: true,
+	OnePerShip: true,
 	factions: ["federation"]
 }, {
 	type: "weapon",
@@ -45,7 +234,7 @@ module.exports = [{
 	set: ["80001"],
 	name: "Full Spread",
 	cost: 5,
-	text: "<b>After ATTACKING WITH A TORPEDO UPGRADE:</b> Discard this card and the Torpedo Upgrade used.\n\nMake another attack with the same torpedo Upgrade against a diffrent target \(even if the torpedo is disabled, has time token, or you no longer have a [target-lock] Token to spend\).",
+	text: "<b>AFTER ATTACKING WITH A TORPEDO UPGRADE:</b> Discard this card and the Torpedo Upgrade used.\n\nMake another attack with the same Torpedo Upgrade against a different target (even if the Torpedo is disabled, has a time token, or you no longer have a   [target-lock] Token to spend).",
 	OnePerShip: true,
 	alliance: true,
 	factions: ["federation"]
@@ -2633,7 +2822,7 @@ module.exports = [{
 	set: ["72263"],
 	name: "Resonance Burst",
 	cost: 5,
-	text: "When attacking during the Declare target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token ([evade], [battlestation], [scan], or  [target-lock]) that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. No ship may be equipped with more than 1 \"Resonance Burs\" Upgrade.",
+	text: "When attacking during the Declare target step, you may discard this card to target a ship in your forward firing arc and within Range 1 of your ship. The target ship must discard 1 Token ([evade], [battlestations], [scan], or  [target-lock]) that is beside it of its choice. If there is a [cloak] Token beside the target ship, flip it over to its red side. No ship may be equipped with more than 1 \"Resonance Burs\" Upgrade.",
 	unique: false,
 	factions: ["federation"]
 }, {
@@ -8431,7 +8620,7 @@ module.exports = [{
 	set: ["71529"],
 	name: "Multi-Targeting Phaser Banks",
 	unique: false,
-	text: "When you perform a  [target-lock] Action, you may disable this card to acquire a 2nd target lock on a different enemy ship within Range 1-3 of your ship. While you have this Upgrade on your ship, you may have up to 2 different enemy ships target locked at the same time.",
+	text: "When you perform a   [target-lock] Action, you may disable this card to acquire a 2nd target lock on a different enemy ship within Range 1-3 of your ship. While you have this Upgrade on your ship, you may have up to 2 different enemy ships target locked at the same time.",
 	factions: ["mirror-universe"],
 	cost: 5,
 	skill: 0,
