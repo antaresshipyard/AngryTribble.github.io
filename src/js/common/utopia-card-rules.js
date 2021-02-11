@@ -323,6 +323,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						},
+			//Generic Captain 4 XP
+					"captain:Cap124": {
+						upgradeSlots: [
+							{},{
+								type: ["tech","weapon","crew"]
+							}
+						],
+						intercept: {
+							ship: {
+								/**
+								 * Cost function for 4 XP Star Trek Alliance Captain
+								 *
+								 * Removes Ship cost.
+								 */
+								cost: function(card,ship,fleet,cost) {
+									var modifier = 0;
+								// If we have intercepted the ship card, factor in the discount, if over 30 it won't work.
+									if ( card.type == "ship" )
+										modifier = 30
+										return resolve(card, ship, fleet, cost) - modifier;
+									}
+								}
+							}
+						},
 			//Generic Captain 6 XP
 					"captain:Cap121": {
 						upgradeSlots: [
@@ -334,6 +358,30 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							ship: {
 								/**
 								 * Cost function for 6 XP Star Trek Alliance Captain
+								 *
+								 * Removes Ship cost.
+								 */
+								cost: function(card,ship,fleet,cost) {
+									var modifier = 0;
+							// If we have intercepted the ship card, factor in the discount, if over 30 it won't work.
+									if ( card.type == "ship" )
+										modifier = 30
+										return resolve(card, ship, fleet, cost) - modifier;
+									}
+								}
+							}
+						},
+			//Generic Captain 8 XP
+					"captain:Cap125": {
+					upgradeSlots: [
+							{},{},{
+								type: ["tech","weapon","crew"]
+							}
+						],
+						intercept: {
+							ship: {
+								/**
+								 * Cost function for 8 XP Star Trek Alliance Captain
 								 *
 								 * Removes Ship cost.
 								 */
@@ -360,7 +408,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						intercept: {
 							ship: {
 								/**
-								 * Cost function for 6 XP Star Trek Alliance Captain
+								 * Cost function for 10 XP Star Trek Alliance Captain
 								 *
 								 * Removes Ship cost.
 								 */
@@ -374,7 +422,34 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						},
-			//Generic Captain 10 XP
+			//Generic Captain 12 XP
+					"captain:Cap126": {
+						upgradeSlots: [
+							{},{},{
+								type: ["tech","weapon","crew"]
+							},
+							{
+								type: ["tech","weapon","crew"]
+							}
+						],
+						intercept: {
+							ship: {
+								/**
+								 * Cost function for 12 XP Star Trek Alliance Captain
+								 *
+								 * Removes Ship cost.
+								 */
+								cost: function(card,ship,fleet,cost) {
+									var modifier = 0;
+							// If we have intercepted the ship card, factor in the discount, if over 30 it won't work.
+									if ( card.type == "ship" )
+										modifier = 30
+										return resolve(card, ship, fleet, cost) - modifier;
+									}
+								}
+							}
+						},
+			//Generic Captain 13 XP
 					"captain:Cap123": {
 						upgradeSlots: [
 							{},{},{},{
@@ -387,7 +462,34 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						intercept: {
 							ship: {
 								/**
-								 * Cost function for 6 XP Star Trek Alliance Captain
+								 * Cost function for 13 XP Star Trek Alliance Captain
+								 *
+								 * Removes Ship cost.
+								 */
+								cost: function(card,ship,fleet,cost) {
+									var modifier = 0;
+							// If we have intercepted the ship card, factor in the discount, if over 30 it won't work.
+									if ( card.type == "ship" )
+										modifier = 30
+										return resolve(card, ship, fleet, cost) - modifier;
+									}
+								}
+							}
+						},
+		//Generic Captain 14 XP
+					"captain:Cap127": {
+						upgradeSlots: [
+							{},{},{},{
+								type: ["tech","weapon","crew"]
+							},
+							{
+								type: ["tech","weapon","crew"]
+							}
+						],
+						intercept: {
+						ship: {
+								/**
+								 * Cost function for 14 XP Star Trek Alliance Captain
 								 *
 								 * Removes Ship cost.
 								 */
