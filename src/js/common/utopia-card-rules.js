@@ -374,7 +374,33 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						},
-
+			//Generic Captain 10 XP
+					"captain:Cap123": {
+						upgradeSlots: [
+							{},{},{},{
+								type: ["tech","weapon","crew"]
+							},
+							{
+								type: ["tech","weapon","crew"]
+							}
+						],
+						intercept: {
+							ship: {
+								/**
+								 * Cost function for 6 XP Star Trek Alliance Captain
+								 *
+								 * Removes Ship cost.
+								 */
+								cost: function(card,ship,fleet,cost) {
+									var modifier = 0;
+							// If we have intercepted the ship card, factor in the discount, if over 30 it won't work.
+									if ( card.type == "ship" )
+										modifier = 30
+										return resolve(card, ship, fleet, cost) - modifier;
+									}
+								}
+							}
+						},
 	//Core Starter Set :71120
 		//Will Riker 6
 		"captain:Cap646":{

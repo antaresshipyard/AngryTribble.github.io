@@ -1,6 +1,18 @@
 module.exports = [
 	{
 	 type: "captain",
+	 id: "Cap123",
+	 set: ["80001"],
+	 name: "STA Fed (13 XP)",
+	 unique: false,
+	 text: "For Star Trek Alliance Building ONLY.  \n\nAdd as 'Captain' to remove ship cost.  \n\n13 XP spent on Captain Skill.\n\nNot a physical card, used internally on Utopia.",
+	 factions: ["federation"],
+	 cost: 0,
+	 skill: 3,
+	 alliance: true,
+	 talents: 3
+ },	{
+	 type: "captain",
 	 id: "Cap122",
 	 set: ["80001"],
 	 name: "STA Fed (10 XP)",
