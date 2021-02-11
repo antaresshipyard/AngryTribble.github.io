@@ -1,5 +1,11 @@
 module.exports = [{
 	type: "set",
+	id: "80000",
+	name: "Alliance Building Tools",
+	releaseDate: "2020-01-31",
+	parentSet: "Tools"
+},{
+	type: "set",
 	id: "80001",
 	name: "Alliance",
 	releaseDate: "2020-01-31",

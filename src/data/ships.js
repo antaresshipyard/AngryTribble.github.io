@@ -1054,7 +1054,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S273",
-	set: ["2017core","80001"],
+	set: ["2017core","80000"],
 	name: "Federation Starship",
 	class: "Galaxy Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -1097,7 +1097,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S271",
-	set: ["2017core", "OP4Prize", "72011","80001"],
+	set: ["2017core", "OP4Prize", "72011","80000"],
 	name: "Federation Starship",
 	class: "Nebula Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -1321,7 +1321,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S260",
-	set: ["72011wp", "71801","80001"],
+	set: ["72011wp", "71801","80000"],
 	name: "Federation Starship",
 	class: "Oberth Class",
 	actions: ["evade", "target-lock", "scan"],
@@ -2231,7 +2231,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S206",
-	set: ["71120", "72253", "72284p","80001"],
+	set: ["71120", "72253", "72284p","80000"],
 	name: "Federation Starship",
 	class: "Galaxy Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -2337,7 +2337,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S201",
-	set: ["71121", "72235p","80001"],
+	set: ["71121", "72235p","80000"],
 	name: "Federation Starship",
 	class: "Miranda Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -2800,7 +2800,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S179",
-	set: ["71268", "72282", "71221","80001"],
+	set: ["71268", "72282", "71221","80000"],
 	name: "Federation Starship",
 	class: "Defiant Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -3159,7 +3159,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S162",
-	set: ["71276","80001"],
+	set: ["71276","80000"],
 	name: "Federation Starship",
 	class: "Nova Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -3899,7 +3899,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S125",
-	set: ["u_s_s_yaeger","72231","80001"],
+	set: ["u_s_s_yaeger","72231","80000"],
 	name: "Federation Starship",
 	class: "Saber Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -4658,7 +4658,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S090",
-	set: ["71531", "72271","80001"],
+	set: ["71531", "72271","80000"],
 	name: "Federation Starship",
 	class: "Sovereign Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -5688,7 +5688,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S041",
-	set: ["71802","80001"],
+	set: ["71802","80000"],
 	name: "Federation Starship",
 	class: "Prometheus Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -5837,7 +5837,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S033",
-	set: ["72001p","80001"],
+	set: ["72001p","80000"],
 	name: "Federation Starship",
 	class: "Intrepid Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
