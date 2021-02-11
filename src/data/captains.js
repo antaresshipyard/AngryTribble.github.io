@@ -1,4 +1,65 @@
-module.exports = [{
+module.exports = [
+	{
+	 type: "captain",
+	 id: "Cap122",
+	 set: ["80001"],
+	 name: "STA Fed (10 XP)",
+	 unique: false,
+	 text: "For Star Trek Alliance Building ONLY.  \n\nAdd as 'Captain' to remove ship cost.  \n\n10 XP spent on Captain Skill.\n\nNot a physical card, used internally on Utopia.",
+	 factions: ["federation"],
+	 cost: 0,
+	 skill: 3,
+	 alliance: true,
+	 talents: 2
+ },	{
+	 type: "captain",
+	 id: "Cap121",
+	 set: ["80001"],
+	 name: "STA Fed (6 XP)",
+	 unique: false,
+	 text: "For Star Trek Alliance Building ONLY.  \n\nAdd as 'Captain' to remove ship cost.  \n\n6 XP spent on Captain Skill.\n\nNot a physical card, used internally on Utopia.",
+	 factions: ["federation"],
+	 cost: 0,
+	 skill: 3,
+	 alliance: true,
+	 talents: 2
+ },	{
+	 type: "captain",
+	 id: "Cap120",
+	 set: ["80001"],
+	 name: "STA Fed (3 XP)",
+	 unique: false,
+	 text: "For Star Trek Alliance Building ONLY.  \n\nAdd as 'Captain' to remove ship cost.  \n\n3 XP spent on Captain Skill.\n\nNot a physical card, used internally on Utopia.",
+	 factions: ["federation"],
+	 cost: 0,
+	 skill: 3,
+	 alliance: true,
+	 talents: 1
+ },	{
+	 type: "captain",
+	 id: "Cap119",
+	 set: ["80001"],
+	 name: "STA Fed (1 XP)",
+	 unique: false,
+	 text: "For Star Trek Alliance Building ONLY.  \n\nAdd as 'Captain' to remove ship cost.  \n\n1 XP spent on Captain Skill.\n\nNot a physical card, used internally on Utopia.",
+	 factions: ["federation"],
+	 cost: 0,
+	 skill: 2,
+	 alliance: true,
+	 talents: 1
+ },	{
+	 type: "captain",
+	 id: "Cap118",
+	 set: ["80001"],
+	 name: "STA Fed (0 XP)",
+	 unique: false,
+	 text: "For Star Trek Alliance Building ONLY.  \n\nAdd as 'Captain' to remove ship cost.  \n\n0 XP spent on Captain Skill.\n\nNot a physical card, used internally on Utopia.",
+	 factions: ["federation"],
+	 cost: 0,
+	 skill: 2,
+	 alliance: true,
+	 talents: 0
+ },{
 	type: "captain",
 	id: "Cap117",
 	set: ["71281", "72291", "72012"],
