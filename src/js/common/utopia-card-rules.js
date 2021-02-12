@@ -300,7 +300,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							}
 						},
 			//Generic Captain 3 XP
-					"captain:Cap120": {
+					"captain:Cap121": {
 						upgradeSlots: [
 							{},{
 								type: ["tech","weapon","crew"]
@@ -323,8 +323,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						},
-			//Generic Captain 4 XP
-					"captain:Cap124": {
+			//Generic Captain 4 or 5 XP
+					"captain:Cap122": {
 						upgradeSlots: [
 							{},{
 								type: ["tech","weapon","crew"]
@@ -333,7 +333,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						intercept: {
 							ship: {
 								/**
-								 * Cost function for 4 XP Star Trek Alliance Captain
+								 * Cost function for 4 or 5 XP Star Trek Alliance Captain
 								 *
 								 * Removes Ship cost.
 								 */
@@ -347,8 +347,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						},
-			//Generic Captain 6 XP
-					"captain:Cap121": {
+			//Generic Captain 6 or 7 XP
+					"captain:Cap123": {
 						upgradeSlots: [
 							{},{},{
 								type: ["tech","weapon","crew"]
@@ -357,7 +357,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						intercept: {
 							ship: {
 								/**
-								 * Cost function for 6 XP Star Trek Alliance Captain
+								 * Cost function for 6 or 7 XP Star Trek Alliance Captain
 								 *
 								 * Removes Ship cost.
 								 */
@@ -371,8 +371,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						},
-			//Generic Captain 8 XP
-					"captain:Cap125": {
+			//Generic Captain 8 or 9 XP
+					"captain:Cap124": {
 					upgradeSlots: [
 							{},{},{
 								type: ["tech","weapon","crew"]
@@ -381,7 +381,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						intercept: {
 							ship: {
 								/**
-								 * Cost function for 8 XP Star Trek Alliance Captain
+								 * Cost function for 8 or 9 XP Star Trek Alliance Captain
 								 *
 								 * Removes Ship cost.
 								 */
@@ -395,8 +395,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						},
-			//Generic Captain 10 XP
-					"captain:Cap122": {
+			//Generic Captain 10 or 11 XP
+					"captain:Cap125": {
 						upgradeSlots: [
 							{},{},{
 								type: ["tech","weapon","crew"]
@@ -408,7 +408,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						intercept: {
 							ship: {
 								/**
-								 * Cost function for 10 XP Star Trek Alliance Captain
+								 * Cost function for 10 or 11 XP Star Trek Alliance Captain
 								 *
 								 * Removes Ship cost.
 								 */
@@ -450,7 +450,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							}
 						},
 			//Generic Captain 13 XP
-					"captain:Cap123": {
+					"captain:Cap127": {
 						upgradeSlots: [
 							{},{},{},{
 								type: ["tech","weapon","crew"]
@@ -477,7 +477,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 							}
 						},
 		//Generic Captain 14 XP
-					"captain:Cap127": {
+					"captain:Cap128": {
 						upgradeSlots: [
 							{},{},{},{
 								type: ["tech","weapon","crew"]
