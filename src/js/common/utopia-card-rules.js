@@ -8611,8 +8611,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 		//Arturis
 		"captain:Cap609":{
-			canEquip: function(upgrade,ship,fleet) {
+			canEquipCaptain: function(upgrade,ship,fleet) {
 				return ship.class == "Dauntless Class";
+			}
+		},
+		//Jhamel
+		"captain:Cap336":{
+			// Equip only on a Romulan Drone Ship
+			canEquipCaptain: function(upgrade,ship,fleet) {
+				return ship.class == "Romulan Drone Ship";
 			}
 		},
 		//Vidiian Captain
@@ -8656,6 +8663,21 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship.class == "Andorian Battle Cruiser";
 			}
 		},
+		//Teero Anaydis
+		"crew:C338":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+		}},
+		//Michael Jonas
+		"crew:C339":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+		}},
+		//Motura
+		"crew:C337":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "xindi", ship, fleet ) ? 0 : 1;
+		}},
 		//Hypothermic Charges
 		"weapon:W193":{
 			canEquip: function(upgrade,ship,fleet) {
