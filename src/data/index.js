@@ -10,6 +10,7 @@ var data = {
 	shipClasses: require("./ship_classes"),
 	captains: require("./captains"),
 	admirals: require("./admirals"),
+	ambassadors: require("./ambassadors"),
 	upgrades: require("./upgrades"),
 	resources: require("./resources"),
 	others: require("./others")

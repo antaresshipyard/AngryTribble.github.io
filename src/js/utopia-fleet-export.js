@@ -146,6 +146,8 @@ module.directive( "fleetExport", function() {
 					text += " " + card.skill + " (Captain)";
 				if( card.type == "admiral" )
 					text += " (Admiral)";
+				if( card.type == "ambassador" )
+					text += " (Ambassador)";
 				if( card.type == "fleet-captain" )
 					text += " Fleet Captain";
 				if( card.type == "flagship" )
@@ -186,6 +188,12 @@ module.directive( "fleetExport", function() {
 					cost += res.cost;
 				}
 
+				if( card.ambassador ) {
+					var res = cardToText(card.ambassador, ship, fleet, indent+1);
+					text += res.text;
+					cost += res.cost;
+				}
+
 				$.each( card.upgrades || [], function(i,slot) {
 					if( slot.occupant ) {
 						var res = cardToText(slot.occupant, ship, fleet, indent+1);
@@ -213,12 +221,12 @@ module.directive( "fleetExport", function() {
 				//console.log("You found me");
 
 				var text = "";
-				
+
 				if( card.type == "ship" && !card.unique) {
 					// Show class name for generic ships
 					text = card.class;
 				} else text = card.name;
-						
+
 				text += "\n";
 				if( card.resource ) {
 					var res = cardToTextTTS(card.resource, ship, fleet);
@@ -232,6 +240,11 @@ module.directive( "fleetExport", function() {
 
 				if( card.admiral ) {
 					var res = cardToTextTTS(card.admiral, ship, fleet);
+					text += res.text;
+				}
+
+				if( card.ambassador ) {
+					var res = cardToTextTTS(card.ambassador, ship, fleet);
 					text += res.text;
 				}
 
@@ -253,17 +266,17 @@ module.directive( "fleetExport", function() {
 				return { cost: 0, text: text };
 				cardToAltTextTTS(fleet);
 			};
-			/////////////////////////////////////////////////////////////	
+			/////////////////////////////////////////////////////////////
 			//Trying to see if I can make it only spit out the needed card by using the ID instead of the Name
-			function cardToAltTextTTS(card, ship, fleet) {	
-				
+			function cardToAltTextTTS(card, ship, fleet) {
+
 				var text = "";
-				
+
 				if( card.type == "ship" && !card.unique) {
 					// Show class ID for generic ships
 					text = card.id;
 				} else text = card.id;
-				
+
 				text += "\n";
 				if( card.resource ) {
 					var resB = cardToAltTextTTS(card.resource, ship, fleet);
@@ -277,6 +290,11 @@ module.directive( "fleetExport", function() {
 
 				if( card.admiral ) {
 					var resB = cardToAltTextTTS(card.admiral, ship, fleet);
+					text += resB.text;
+				}
+
+				if( card.ambassador ) {
+					var resB = cardToAltTextTTS(card.ambassador, ship, fleet);
 					text += resB.text;
 				}
 
@@ -299,17 +317,17 @@ module.directive( "fleetExport", function() {
 				return { cost: 0, text: text };
 			};
 
-			/////////////////////////////////////////////////////////////	
-			//Trying to make it build a better URL by only listing the ship ID's concated by ship. 
-			function cardToAltTextURL(card, ship, fleet) {	
-				
+			/////////////////////////////////////////////////////////////
+			//Trying to make it build a better URL by only listing the ship ID's concated by ship.
+			function cardToAltTextURL(card, ship, fleet) {
+
 				var text = "";
-				
+
 				if( card.type == "ship" && !card.unique) {
 					// Show class ID for generic ships
 					text += text + card.id + ":" ;
 			} else text = card.id ;
-				
+
 				if( card.resource ) {
 					var resB = cardToAltTextURL(card.resource, ship, fleet);
 					text += resB.text + ",";
@@ -322,6 +340,11 @@ module.directive( "fleetExport", function() {
 
 				if( card.admiral ) {
 					var resB = cardToAltTextURL(card.admiral, ship, fleet);
+					text += resB.text + ",";
+				}
+
+				if( card.ambassador ) {
+					var resB = cardToAltTextURL(card.ambassador, ship, fleet);
 					text += resB.text + ",";
 				}
 
@@ -390,8 +413,10 @@ module.directive( "fleetExport", function() {
 						data.priority = 1; break;
 					case "Admiral":
 						data.priority = 2; break;
+					case "Ambassador":
+						data.priority = 3; break;
 					default:
-						data.priority = 3;
+						data.priority = 4;
 				}
 
 				card_stack.push(data);
@@ -404,6 +429,9 @@ module.directive( "fleetExport", function() {
 				}
 				if( card.admiral ){
 					card_stack.push(cardToFleetData(card.admiral, ship, fleet, card_stack));
+				}
+				if( card.ambassador ){
+					card_stack.push(cardToFleetData(card.ambassador, ship, fleet, card_stack));
 				}
 				if(card.upgrades && card.upgrades.length > 0){
 					$.each( card.upgrades, function(i,slot) {
@@ -449,6 +477,7 @@ module.directive( "fleetExport", function() {
 			    "ship":"Ship",
 			    "captain":"Captain",
 			    "admiral":"A",
+					"ambassador":"M",
 			    "crew":"C",
 			    "talent":"E",
 				"tech":"T",

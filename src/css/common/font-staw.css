@@ -333,6 +333,10 @@
   content: "A";
 }
 
+.fs-ambassador:before {
+  content: "A";
+}
+
 .fs-resource:before {
   content: "A";
 }

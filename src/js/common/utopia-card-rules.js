@@ -503,6 +503,19 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								}
 							}
 						},
+						//Reinforced Shielding
+						"tech:T253":{
+							canEquip: onePerShip("Reinforced Shielding"),
+							intercept: {
+								ship: {
+									shields: function(card,ship,fleet,shields) {
+										if( card == ship )
+											return resolve(card,ship,fleet,shields) + 2;
+										return shields;
+									}
+								}
+							}
+						},
 	//Core Starter Set :71120
 		//Will Riker 6
 		"captain:Cap646":{

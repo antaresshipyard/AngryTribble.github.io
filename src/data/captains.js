@@ -2594,10 +2594,11 @@ module.exports = [
 	set: ["71804"],
 	name: "Kor",
 	unique: true,
-	text: "<b>ACTION:</b> If your ship is not cloaked, all enemy ships at Range 1-3 must attack your ship this round, if possible. When defending against each of these attacks, roll +2 defense dice.",
+	text: "<b>ACTION:</b> If this ship is not cloaked, target all enemy ships.\n\nAll target ships must attack this ship this round, if possible. When defending against each of these attacks, roll +2 defense dice.\n\n<b>( ERRATA )</b>",
 	factions: ["klingon"],
 	cost: 4,
 	skill: 6,
+	range: "1 - 3",
 	talents: 1
 }, {
 	type: "captain",

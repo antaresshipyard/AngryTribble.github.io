@@ -231,6 +231,21 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 			};
 
+			$scope.fleetHasAmbassador = function( fleet ) {
+
+				var hasAmbassador = false;
+
+				$.each( fleet.ships, function(i,ship) {
+					if( ship.ambassador ) {
+						hasAmbassador = true;
+						return false;
+					}
+				});
+
+				return hasAmbassador;
+
+			};
+
 			$scope.setShipAdmiral = function(fleet,ship,admiral) {
 
 				if( admiral.type != "admiral" )
@@ -261,6 +276,38 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				return ship.admiral;
 
+	};
+
+				$scope.setShipAmbassador = function(fleet,ship,ambassador) {
+
+					if( ambassador.type != "ambassador" )
+						return false;
+
+				// Check interceptors
+					var canEquip = valueOf(ambassador,"canEquipAmbassador",ship,fleet);
+					if( !canEquip ) {
+						console.log("equip stopped by interceptor");
+						return false;
+					}
+
+				// Uniqueness
+				var other = $scope.findOtherInFleet(ambassador, fleet);
+
+				if( other && other != ambassador && other != ship.ambassador ) {
+					console.log( "ambassador already in fleet" );
+					return false;
+				}
+
+				// Move if already in fleet
+				if( other && other != ship.ambassador ) {
+					$scope.removeFromFleet( other, fleet, ship.ambassador );
+				}
+
+				//ship.ambassador = $.extend(true,{}, ambassador);
+				ship.ambassador = angular.copy(ambassador);
+
+				return ship.ambassador;
+
 			};
 
 			$scope.findOtherInFleet = function( card, fleet ) {
@@ -281,6 +328,11 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 					if( card == ship.admiral || isUniqueClash(card, ship.admiral)) {
 						clash = ship.admiral;
+						return false;
+					}
+
+					if( card == ship.ambassador || isUniqueClash(card, ship.ambassador)) {
+						clash = ship.ambassador;
 						return false;
 					}
 
@@ -363,6 +415,14 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 						return false;
 					}
 
+					if( card == ship.ambassador ) {
+						if( replaceWith && replaceWith.type == "ambassador" )
+							ship.ambassador = replaceWith;
+						else
+							delete ship.ambassador;
+						return false;
+					}
+
 					var found = false;
 
 					$.each( $scope.getUpgradeSlots(ship), function(j,slot) {
@@ -402,6 +462,10 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 				if( ship.admiral )
 					if( !valueOf(ship.admiral,"free",ship,fleet) )
 						cost += valueOf(ship.admiral,"cost",ship,fleet);
+
+				if( ship.ambassador )
+					if( !valueOf(ship.ambassador,"free",ship,fleet) )
+						cost += valueOf(ship.ambassador,"cost",ship,fleet);
 
 				$.each( $scope.getUpgradeSlots(ship), function(i,slot) {
 					if( slot.occupant )
@@ -469,6 +533,9 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 
 				if( card.admiral )
 					saved.admiral = saveCard(card.admiral);
+
+				if( card.ambassador )
+					saved.ambassador = saveCard(card.ambassador);
 
 				var upgrades = [];
 				// TODO Consider switching ship.upgrades to .upgradeSlots
@@ -545,6 +612,15 @@ module.directive( "fleetBuilder", [ "$filter", function($filter) {
 							var admiral = $scope.setShipAdmiral( fleet, card, result.card );
 							if( admiral )
 								result.promulgate(admiral);
+						}
+					}
+
+					if( savedCard.ambassador ) {
+						var result = loadCard(fleet, cards, savedCard.ambassador, card);
+						if( result ) {
+							var ambassador = $scope.setShipAmbassador( fleet, card, result.card );
+							if( ambassador )
+								result.promulgate(ambassador);
 						}
 					}
 

@@ -58,7 +58,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			// Apply specific card rules
 			if( cardRules[ship.type+":"+ship.id] )
 				$.extend( true, ship, cardRules[ship.type+":"+ship.id] );
-			
+
 			$.each( ship.upgradeSlots || [], function(i,slot) {
 				if( !slot.source )
 					slot.source = ship.name;
@@ -69,7 +69,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				ship.intercept.ship.cost = [ship.intercept.ship.cost];
 			else
 				ship.intercept.ship.cost = [];
-			
+
 			ship.intercept.ship.cost.push( {
 				source: "Faction Penalty",
 				priority: 1,
@@ -81,7 +81,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					return cost;
 				}
 			});
-			
+
 
 			cards.push(ship);
 
@@ -96,14 +96,14 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 		};
 
 		function loadCaptain(captain) {
-			
+
 			if( isDuplicate(captain, cards) ) {
 				console.log( "Duplicate card definition ignored", captain.id );
 				return;
 			}
 
 			$.extend(true, captain, captainDefaults);
-			
+
 			if( captain.factionPenalty == undefined )
 				captain.factionPenalty = 1;
 
@@ -124,7 +124,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				if( !slot.source )
 					slot.source = captain.name;
 			} );
-			
+
 			cards.push( captain );
 
 		}
@@ -146,7 +146,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 			}
 
 			$.extend(true, admiral, admiralDefaults);
-			
+
 			if( admiral.factionPenalty == undefined )
 				admiral.factionPenalty = 3;
 
@@ -175,8 +175,46 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				if( !slot.source )
 					slot.source = admiral.name;
 			} );
-			
+
 			cards.push( admiral );
+
+		}
+
+		var ambassadorDefaults = {
+			intercept: { ship: {}, fleet: {} },
+			canEquip: true,
+			canEquipAmbassador: true,
+			canEquipFaction: true,
+			isSkillModifier: true,
+			showType: true
+		};
+
+		function loadAmbassador(ambassador) {
+
+			if( isDuplicate(ambassador, cards) ) {
+				console.log( "Duplicate card definition ignored", ambassador.id );
+				return;
+			}
+
+			$.extend(true, ambassador, ambassadorDefaults);
+
+			if( ambassador.factionPenalty == undefined )
+				ambassador.factionPenalty = 0;
+
+			// Set mirror flag
+			ambassador.mirror = $factions.hasFaction(ambassador, "mirror-universe");
+
+			// Apply specific card rules
+			if( cardRules[ambassador.type+":"+ambassador.id] )
+				$.extend( true, ambassador, cardRules[ambassador.type+":"+ambassador.id] );
+
+			// Set the source of any special upgrade slots
+			$.each( ambassador.upgradeSlots || [], function(i,slot) {
+				if( !slot.source )
+					slot.source = ambassador.name;
+			} );
+
+			cards.push( ambassador );
 
 		}
 
@@ -197,7 +235,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 			if( upgrade.factionPenalty == undefined )
 				upgrade.factionPenalty = 1;
-		
+
 			// Set mirror flag
 			upgrade.mirror = $factions.hasFaction(upgrade, "mirror-universe");
 
@@ -210,7 +248,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				if( !slot.source )
 					slot.source = upgrade.name;
 			} );
-			
+
 			cards.push( upgrade );
 
 		}
@@ -238,13 +276,13 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 
 		// For resource special cards or anything else that doesn't need any special handling
 		function loadOther(card) {
-			
+
 			// TODO Find a better home for this. Should strictly be in rules, but would be too verbose.
 			if( card.type == "fleet-captain" ) {
-				
+
 				for( var i = 0; i < card.talentAdd; i++ )
 					// Special talent slot, which allows a free talent if captain already has an empty talent slot
-					card.upgradeSlots.push( { 
+					card.upgradeSlots.push( {
 						type: ["talent"],
 						source: "Fleet Captain",
 						rules: "Free talent if Captain has an empty talent slot",
@@ -284,7 +322,7 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 				};
 
 			}
-			
+
 			// TODO Same as above
 			if( card.type == "flagship" ) {
 				var flagship = card;
@@ -311,48 +349,48 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					},
 				};
 			}
-			
+
 			if( card.type == "token") {
 				if( token[card.id] ) {
 					console.log("Duplicate token",card.id,card.name);
 					return;
 				}
-				
+
 				token[card.id] = card;
 			}
-			
+
 			// Apply specific card rules
 			if( cardRules[card.type+":"+card.id] )
 				$.extend( true, card, cardRules[card.type+":"+card.id] );
-			
+
 			cards.push(card);
-			
+
 		}
-		
+
 		function loadSet(set) {
-			
+
 			if( sets[set.id] ) {
 				console.log("Duplicate set",set.id,set.name);
 				return;
 			}
-			
+
 			sets[set.id] = set;
-			
+
 		}
-		
+
 		function loadShipClass(shipClass) {
-			
+
 			if( shipClasses[shipClass.id] ) {
 				console.log("Duplicate ship class",shipClass.id,shipClass.name,shipClasses[shipClass.id].name);
 				return;
 			}
-			
+
 			shipClasses[shipClass.id] = shipClass;
-			
+
 		}
-		
+
 		function loadCopies( copies ) {
-			
+
 			$.each( copies || [], function(i,copy) {
 				$.each( cards, function(i,card) {
 					if( card.id == copy.of ) {
@@ -361,71 +399,78 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					}
 				} );
 			} );
-			
+
 		}
-		
+
 		$http.get( "data/data.json" ).success( function(data) {
-			
+
 			var copies = [];
-			
+
 			$.each( data.sets || [], function(i,set) {
 				if( set.type == "copy" )
 					copies.push(set);
 				else
 					loadSet(set);
 			});
-			
+
 			$.each( data.ships || [], function(i,ship) {
 				if( ship.type == "copy" )
 					copies.push(ship);
 				else
 					loadShip(ship);
 			});
-			
+
 			$.each( data.shipClasses || [], function(i,shipClass) {
 				if( shipClass.type == "copy" )
 					copies.push(shipClass);
 				else
 					loadShipClass(shipClass);
 			});
-			
+
 			$.each( data.captains || [], function(i,captain) {
 				if( captain.type == "copy" )
 					copies.push(captain);
 				else
 					loadCaptain(captain);
 			});
-			
+
 			$.each( data.admirals || [], function(i,admiral) {
 				if( admiral.type == "copy" )
 					copies.push(admiral);
 				else
 					loadAdmiral(admiral);
 			});
-			
+
+			$.each( data.ambassadors || [], function(i,ambassador) {
+				if( ambassador.type == "copy" )
+					copies.push(ambassador);
+				else
+					loadAmbassador(ambassador);
+			});
+
 			$.each( data.upgrades || [], function(i,upgrade) {
 				if( upgrade.type == "copy" )
 					copies.push(upgrade);
 				else
 					loadUpgrade(upgrade);
 			});
-			
+
 			$.each( data.resources || [], function(i,resource) {
 				if( resource.type == "copy" )
 					copies.push(resource);
 				else
 					loadResource(resource);
 			});
-			
+
 			$.each( data.others || [], function(i,card) {
 				if( card.type == "copy" )
 					copies.push(card);
 				else
 					loadOther(card);
 			});
-			
+
 			loadCopies(copies);
-			
+
 			// Assign classes to ships
 			$.each( cards, function(i,card) {
 				if( card.type == "ship" ) {
@@ -447,10 +492,10 @@ module.factory( "cardLoader", [ "$http", "$filter", "cardRules", "$factions", fu
 					card.tokenData = token[card.tokenId];
 				}
 			});
-			
+
 			if( callback )
 				callback();
-			
+
 		});
 
 	};
