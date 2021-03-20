@@ -11,7 +11,7 @@ module.exports = [{
 	hull: 3,
 	shields: 3,
 	cost: 17,
-	text: "(PREVIEW OF FUTURE EXPANSION)\n<b>COMBAT PHASE:</b> If this ship is cloaked.  Place a [battlestations],[scan],OR [evade] Token beside this ship OR increase the Captain Skill of the Captain equipped to this ship by 3 this Combat Phase",
+	text: "<b>COMBAT PHASE:</b> If this ship is cloaked:\nPlace a [battlestations],[scan],OR [evade] Token beside this ship OR increase the Captain Skill of the Captain equipped to this ship by 3 this Combat Phase",
 	unique: true,
 	factions: ["dominion","klingon"],
 	intercept: {
@@ -19,7 +19,91 @@ module.exports = [{
 		fleet: {}
 	},
 	squadron: false
+},{
+	type: "ship",
+	id: "S334",
+	set: ["75009"],
+	name: "Vetar",
+	class: "Cardassian Galor Class",
+	actions: ["evade", "target-lock", "scan"],
+	upgrades: ["tech","tech", "weapon", "weapon","crew"],
+	attack: 4,
+	agility: 1,
+	hull: 4,
+	shields: 4,
+	cost: 22,
+	text: "<b>ACTION:</b> \nAll other friendly Dominion ships within Range 1-2 may perform an Action on their Action Bar as a Free Action.",
+	unique: true,
+	factions: ["dominion"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+},{
+	type: "ship",
+	id: "S332",
+	set: ["75009"],
+	name: "Orias",
+	class: "Cardassian Keldon Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech","tech", "weapon", "weapon","crew"],
+	attack: 5,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 24,
+	text: "If there are only Dominion and/or Romulan cards equipped to this ship, add the [cloak] and [sensor-echo] Actions to this ship's Action Bar.\n<b>WHEN A FRIENDLY SHIP WITHIN RANGE 1 PERFORMS THE CLOAK ACTION:</b> This ship may perform the [cloak] Action as a Free Action.",
+	unique: true,
+	factions: ["dominion"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+},{
+	type: "ship",
+	id: "S331",
+	set: ["75009"],
+	name: "Preloc",
+	class: "Cardassian Keldon Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech","tech", "weapon", "weapon","crew"],
+	attack: 5,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 24,
+	text: "All friendly Dominion ships within Range 1 roll +1 attack die.",
+	unique: true,
+	factions: ["dominion"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
 }, {
+	type: "ship",
+	id: "S333",
+	set: ["75009"],
+	name: "Dominion/Klingon Starship",
+	class: "Klingon Bird-of-Prey",
+	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
+	upgrades: ["tech", "weapon", "crew"],
+	attack: 4,
+	agility: 1,
+	hull: 3,
+	shields: 2,
+	cost: 13,
+	text: "",
+	unique: false,
+	factions: ["dominion","klingon"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+},{
 	type: "ship",
 	id: "S338",
 	set: ["75008"],
@@ -2465,7 +2549,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S199",
-	set: ["72290p", "71122", "72240", "72234p", "72002p","75006"],
+	set: ["72290p", "71122", "72240", "72234p", "72002p","75006","75008"],
 	name: "Federation Starship",
 	class: "Constitution Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -2654,7 +2738,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S190",
-	set: ["71127", "71513b", "71798", "blind_aldara"],
+	set: ["71127", "71513b", "71798", "blind_aldara","75009"],
 	name: "Dominion Starship",
 	class: "Cardassian Galor Class",
 	actions: ["evade", "target-lock", "scan"],
@@ -2663,7 +2747,7 @@ module.exports = [{
 	agility: 1,
 	hull: 4,
 	shields: 3,
-	cost: 24,
+	cost: 17,
 	text: "\r\n      ",
 	unique: false,
 	factions: ["dominion"],
@@ -3075,7 +3159,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S170",
-	set: ["71275", "72262"],
+	set: ["71275", "72262","75009"],
 	name: "Dominion Starship",
 	class: "Cardassian Keldon Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -3084,7 +3168,7 @@ module.exports = [{
 	agility: 1,
 	hull: 4,
 	shields: 2,
-	cost: 24,
+	cost: 20,
 	text: "",
 	unique: false,
 	factions: ["dominion"],
@@ -3751,7 +3835,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S136",
-	set: ["71446", "71646e", "blind_seleya"],
+	set: ["71446", "71646e", "blind_seleya","75008"],
 	name: "Vulcan Starship",
 	class: "D'Kyr Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
@@ -4477,7 +4561,7 @@ module.exports = [{
 	agility: 1,
 	hull: 4,
 	shields: 3,
-	cost: 24,
+	cost: 17,
 	text: "",
 	unique: false,
 	factions: ["mirror-universe"],

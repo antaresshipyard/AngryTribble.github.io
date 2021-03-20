@@ -258,6 +258,58 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 
+    //Battle-Hardened
+		"talent:E202":{
+			canEquip: onePerShip("Battle-Hardened")},
+
+		//Calculating
+	   "talent:E200":{
+			canEquip: onePerShip("Calculating")},
+
+		//Full Spread
+	   "weapon:W201":{
+			canEquip: onePerShip("Full Spread")},
+
+		//Enhanced Targeting
+		 "weapon:W207":{
+			canEquip: onePerShip("Enhanced Targeting")},
+
+		//Overcharged Phasers
+		 "weapon:W205":{
+			canEquip: onePerShip("Overcharged Phasers")},
+
+	  //Dorsal Phaser Array
+		 "weapon:W203":{
+			canEquip: onePerShip("Dorsal Phaser Array")},
+
+		//Detection Grid
+		 "tech:T255":{
+			canEquip: onePerShip("Detection Grid")},
+
+		//Reinforced Shielding
+		 "tech:T253":{
+			canEquip: onePerShip("Reinforced Shielding")},
+
+		//Commander
+		 "crew:C362":{
+			canEquip: onePerShip("Commander")},
+
+		//Tactical Officer
+		 "crew:C360":{
+			canEquip: onePerShip("Tactical Officer")},
+
+		//Helmsman
+		 "crew:C361":{
+			canEquip: onePerShip("Helmsman")},
+
+		//Science Officer
+		 "crew:C358":{
+			canEquip: onePerShip("Science Officer")},
+
+	  //Operations Officer
+		 "crew:C359":{
+			canEquip: onePerShip("Operations Officer")},
+
 		//Generic Captain 0 XP
 			"captain:Cap118": {
 				intercept: {
@@ -8966,7 +9018,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 
-		// Tha Animated Series : 75006
+		// The Animated Series : 75006
 
 		// The USS Enterprise
 
@@ -9315,13 +9367,152 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return hasFaction(ship,"borg", ship, fleet) && hasFaction(ship.captain,"borg", ship, fleet);
 			}},
 
-	//Vulcan Live Long and Prosper
-		//Live Long And Prospe
+	//Vulcan Faction Pack 75008
+
+	//T'Pol Captain
+		"captain:Cap662":{
+			factionPenalty: function(upgrade, ship, fleet) {
+				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}},
+
+	//T'Pau Captain
+		"captain:Cap832":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}},
+
+	//Solok Captain
+		"captain:Cap831":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1;
+			}},
+
+	//Muroc Captain
+		"captain:Cap830":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}},
+
+	//Translinear Sensors
+		"tech:T268":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}},
+
+	//Graviton Telescope
+		"tech:T269":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}},
+
+	//T'Paal
+		"crew:C369":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+			}},
+
+	//Vorik
+		"crew:C368":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1;
+			}},
+
+	//Chu'Lak
+		"crew:C367":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1;
+			}},
+
+	//Stone of Gol
+		"tech:T267":{
+			factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
+		},
+		intercept: {
+			self: {
+				cost: function(upgrade,ship,fleet,cost) {
+					if( ship && !$factions.hasFaction(ship,"vulcan", ship, fleet) )
+						return resolve(upgrade,ship,fleet,cost) + 5;
+					return cost;
+				}
+			}
+		}
+		},
+
+		//Live Long And Prosper
 		"talent:E198":{
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return hasFaction(ship,"vulcan", ship, fleet) && hasFaction(ship.captain,"vulcan", ship, fleet);
 		}},
 
+		//Logic is the beginning of wisdom
+		"talent:E207":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"vulcan", ship, fleet) && hasFaction(ship.captain,"vulcan", ship, fleet);
+		}},
+
+		//Photonic Auto-Cannon
+		"weapon:W212":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"vulcan", ship, fleet);
+		}},
+
+		//Aft Particle Beam
+		"weapon:W211":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"vulcan", ship, fleet);
+		}},
+
+		//Katric Ark
+		"tech:T264":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"vulcan", ship, fleet);
+		}},
+
+		//Science Vessel Variant
+		"tech:T266":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "D'Kyr Class";
+			},
+				canEquip: function(upgrade,ship,fleet) {
+					return ship.class == "Suurok Class";
+				},
+			canEquip: onePerShip("Science Vessel Variant"),
+			intercept: {
+				ship: {
+					shields: function(card,ship,fleet,shields) {
+						if( card == ship )
+							return resolve(card,ship,fleet,shields) + 1;
+						return shields;
+					},
+					hull: function(card,ship,fleet,hull) {
+							if( card == ship )
+								return resolve(card,ship,fleet,hull) + 1;
+							return hull;
+						}
+				}
+			}
+		},
+
+		//Combat Vessel Variant
+		"tech:T265":{
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.class == "D'Kyr Class";
+			},
+				canEquip: function(upgrade,ship,fleet) {
+					return ship.class == "Suurok Class";
+				},
+				canEquip: onePerShip("Combat Vessel Variant"),
+				intercept: {
+					ship: {
+						attack: function(card,ship,fleet,attack) {
+							if( card == ship )
+								return resolve(card,ship,fleet,attack) + 1;
+							return attack;
+						}
+					}
+				}
+		},
 
 	//Dominion Cardassian Faction Pack
 		//Gul Dukat
@@ -9334,9 +9525,136 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			canEquip: onePerShip("Kanar"),
 			canEquipFaction: function(upgrade,ship,fleet) {
 				return hasFaction(ship,"dominion", ship, fleet);
-			}},
+			},	isSlotCompatible: function(slotTypes) {
+					//console.log($.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0);
+					return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
+				},
+				upgradeSlots: [
+					{
+						type: function(upgrade,ship) {
+							return getSlotType(upgrade,ship);
+						}
+					}
+				]
+		},
 
+		//Gul Broca
+		"crew:C363":{
+			canEquipFaction: function(upgrade,ship,fleet) {
+				return hasFaction(ship,"dominion", ship, fleet);
+			}
+		},
 
+		//Enabran Tain Captain
+		"captain:Cap827":{
+			intercept: {
+			self: {
+				factionPenalty: function(card,ship,fleet,factionPenalty) {
+					if( hasFaction(ship,"romulan",ship,fleet) )
+						return 0;
+					return factionPenalty;
+		  		}
+	  		}
+	  	}
+	  },
+		//Enabran Tain Admiral
+		"admiral:A036":{
+			intercept: {
+			self: {
+				factionPenalty: function(card,ship,fleet,factionPenalty) {
+					if( hasFaction(ship,"romulan",ship,fleet) )
+						return 0;
+					return factionPenalty;
+		  		}
+	  		}
+	  	}
+	  },
+
+		//Gul Damar
+		"crew:C364":{
+		intercept: {
+			ship: {
+				skill: function(upgrade,ship,fleet,skill) {
+					if( upgrade == ship.captain )
+						return resolve(upgrade,ship,fleet,skill) + 2;
+					return skill;
+				}
+			}
+		}
+	},
+
+	//Obsidian Order
+	"talent:E204":{
+		canEquipFaction: function(upgrade,ship,fleet) {
+			return hasFaction(ship,"dominion", ship, fleet);
+		},
+		canEquip: onePerShip("Obsidian Order"),
+	},
+
+	//Multiple Dorsal Arrays
+	"weapon:W208":{
+		canEquip: onePerShip("Multiple Dorsal Arrays"),
+		canEquip: function(upgrade,ship,fleet) {
+			return ship.class == "Cardassian Galor Class";
+		}
+	},
+
+	//Enhanced Resonance Field Grid
+	"weapon:W209":{
+		canEquip: onePerShip("Enhanced Resonance Field Grid")
+	},
+
+	//Phase Disruptor Array
+	"weapon:W210":{
+		canEquip: onePerShip("Phase Disruptor Array"),
+		canEquip: function(upgrade,ship,fleet) {
+			return ship.class == "Cardassian Galor Class";
+		},
+		canEquip: function(upgrade,ship,fleet) {
+			return ship.class == "Cardassian Keldon Class";
+		},
+	},
+
+	//Sensor Ghost
+	"tech:T260":{
+		canEquip: onePerShip("Sensor Ghost")
+	},
+
+	//Uridium Alloy
+	"tech:T261":{
+		canEquip: onePerShip("Uridium Alloy"),
+		canEquip: function(upgrade,ship,fleet) {
+			return ship.class == "Cardassian Galor Class";
+		},
+		canEquip: function(upgrade,ship,fleet) {
+			return ship.class == "Cardassian Keldon Class";
+		}
+	},
+
+	//Type-3 Galor Class
+	"tech:T261":{
+		canEquip: onePerShip("Type-3 Galor Class"),
+		canEquip: function(upgrade,ship,fleet) {
+			return ship.class == "Cardassian Galor Class";
+		},
+		intercept: {
+			ship: {
+				shields: function(card,ship,fleet,shields) {
+					if( card == ship )
+						return resolve(card,ship,fleet,shields) + 2;
+					return shields;
+				}
+			}
+		}
+	},
+
+	//Legion Crew Module
+	"tech:T263":{
+		canEquipFaction: function(upgrade,ship,fleet) {
+			return hasFaction(ship,"dominion", ship, fleet);
+		},
+		upgradeSlots: cloneSlot( 2, { type: ["crew"] } )
+	},
 
 //Faction Penalty For Subfactions
 		//Federation

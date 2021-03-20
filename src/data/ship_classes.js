@@ -763,7 +763,7 @@ module.exports = [
 		2: {
 			straight: "green",
 			bank: "green",
-			turn: "red"
+			turn: "white"
 		},
 		3: {
 			straight: "white",

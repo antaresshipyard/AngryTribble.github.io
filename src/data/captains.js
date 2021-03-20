@@ -3197,7 +3197,7 @@ module.exports = [
 	cost: 4,
 	skill: 5,
 	talents: 1,
-	text: "<b>END PHASE:</b> If this ship has a [scan] Token beside it:\n\nReplace one [scan] Token with an [evade] Token and a [battlestation] Token.  The [evade] Token and [battlestation] Token gained from this effect do not get removed this End Phase.",
+	text: "<b>END PHASE:</b> If this ship has a [scan] Token beside it:\n\nReplace one [scan] Token with an [evade] Token and a [battlestations] Token.  The [evade] Token and [battlestations] Token gained from this effect do not get removed this End Phase.",
 	unique: true,
 	factions: ["vulcan"]
 },{
@@ -3214,13 +3214,47 @@ module.exports = [
 	factions: ["federation","vulcan"]
 },{
 	type: "captain",
+	id: "Cap828",
+	set: ["75009"],
+	name: "Gul Evek",
+	cost: 2,
+	skill: 4,
+	text: "<b>COMBAT PHASE:</b> Target all friendly ships.\n\nPlace all [aux] Tokens beside all target ships beside this ship.",
+  range: "1",
+	unique: true,
+	factions: ["dominion"]
+},{
+	type: "captain",
+	id: "Cap829",
+	set: ["75009"],
+	name: "Gul Toran",
+	cost: 4,
+	skill: 6,
+	talents: 1,
+	text: "<b>ACTION:</b> Choose a faction and target all friendly ships.\n\nThe target ships roll +1 attack die and +1 defense die against ships of the chosen faction this game round.",
+  range: "1 - 2",
+	unique: true,
+	factions: ["dominion"]
+},{
+	type: "captain",
+	id: "Cap827",
+	set: ["75009"],
+	name: "Enabran Tain",
+	cost: 5,
+	skill: 8,
+	talents: 1,
+	text: "You do not pay a faction penalty when equipping this card to a Romulan ship.\n<b>FREE ACTION:</b> Discard 1 Dominion [crew] Upgrade equipped to this ship and place 2 [time] Tokens on this card.\nPerform an attack with this ship's Primary Weapon with -1 attack die.",
+	unique: true,
+	factions: ["dominion"]
+},{
+	type: "captain",
 	id: "Cap826",
 	set: ["75009"],
 	name: "Gul Dukat",
 	cost: 5,
 	skill: 8,
 	talents: 2,
-	text: "(PREVIEW OF FUTURE EXPANSION)\n<b>WHEN ATTACKING:</b> During the modify attack dice step. Spend a [evade] and a [scan] Token from beside this ship.\n\nConvert up to 3 [battlestations] into 2 [hit] each",
+	text: "<b>WHEN ATTACKING:</b> During the modify attack dice step. Spend a [evade] and a [scan] Token from beside this ship.\n\nConvert up to 3 [battlestations] into 2 [hit] each.",
 	unique: true,
 	shipDominion: true,
 	factions: ["dominion"]

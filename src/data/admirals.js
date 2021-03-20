@@ -11,6 +11,17 @@ module.exports = [{
 	factions: ["federation"]
 }, {
 	type: "admiral",
+	id: "A036",
+	set: ["75009"],
+	name: "Enabran Tain",
+	cost: 5,
+	skill: 2,
+	talents: 1,
+	text: "You do not pay a faction penalty when equipping this card to a Romulan ship.\n<b>FREE FLEET ACTION:</b> Discard 1 Dominion [crew] Upgrade equipped to this ship and place 2 [time] Tokens on this card.\nPerform an attack with this ship's Primary Weapon with -1 attack die.",
+	unique: true,
+	factions: ["dominion"]
+},{
+	type: "admiral",
 	id: "A034",
 	set: ["75005"],
 	name: "Christopher Pike",
