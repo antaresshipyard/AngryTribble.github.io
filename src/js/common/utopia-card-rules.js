@@ -6200,7 +6200,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
 			},
 			canEquipFaction: function(card,ship,fleet) {
-				return hasFaction(ship,"federation",ship,fleet) && hasFaction(ship.captain,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet) && hasFaction(ship.captain,"bajoran",ship,fleet) || hasFaction(ship,"vulcan",ship,fleet) && hasFaction(ship.captain,"vulcan",ship,fleet);
+				return hasFaction(ship,"federation",ship,fleet) && hasFaction(ship.captain,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet) && hasFaction(ship.captain,"bajoran",ship,fleet) || hasFaction(ship,"vulcan",ship,fleet) && hasFaction(ship.captain,"vulcan",ship,fleet) || hasFaction(ship,"federation",ship,fleet) && hasFaction(ship.captain,"bajoran",ship,fleet) || hasFaction(ship,"federation",ship,fleet) && hasFaction(ship.captain,"vulcan",ship,fleet) || hasFaction(ship,"vulcan",ship,fleet) && hasFaction(ship.captain,"federation",ship,fleet) || hasFaction(ship,"vulcan",ship,fleet) && hasFaction(ship.captain,"bajoran",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet) && hasFaction(ship.captain,"federation",ship,fleet) || hasFaction(ship,"bajoran",ship,fleet) && hasFaction(ship.captain,"vulcan",ship,fleet);
 			}},
 		//Riley Aldrin Shepard
 		"crew:C222":{
