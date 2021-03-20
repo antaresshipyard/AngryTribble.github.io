@@ -9369,6 +9369,39 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Vulcan Faction Pack 75008
 
+//U.S.S. T'Kumbra
+"ship:S335":{
+	intercept: {
+		ship: {
+			cost: function(upgrade, ship, fleet, cost) {
+				if( checkUpgrade("crew", upgrade, ship) )
+					return resolve(upgrade, ship, fleet, cost) - 1;
+				return cost;
+			}
+		}
+	},
+	intercept: {
+		ship: {
+			cost: function(card,ship,fleet,cost) {
+				var modifier = 0;
+				if ( card.type == "admiral" )
+					modifier = 1
+				return resolve(card, ship, fleet, cost) - modifier;
+				}
+			}
+		},
+		intercept: {
+			ship: {
+				cost: function(card,ship,fleet,cost) {
+					var modifier = 0;
+					if ( card.type == "captain" )
+						modifier = 1
+					return resolve(card, ship, fleet, cost) - modifier;
+					}
+				}
+			},
+},
+
 	//T'Pol Captain
 		"captain:Cap662":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -9587,7 +9620,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	"crew:C365":{
 		factionPenalty: function(upgrade, ship, fleet) {
 			return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
-		}		
+		}
 },
 
 	//Obsidian Order
