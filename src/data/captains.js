@@ -2071,7 +2071,7 @@ module.exports = [
 	set: ["75008"],
 	name: "T'Pol",
 	unique: true,
-	text: "(PREVIEW OF FUTURE EXPANSION)\n<b>COMBAT PHASE:</b> Choose [evade] or [battlestations] Tokens\n\nYou may spend [scan] Tokens as though they were the chosen type of upgrade this Combat Phase.",
+	text: "<b>COMBAT PHASE:</b> Choose [evade] or [battlestations] Tokens\n\nYou may spend [scan] Tokens as though they were the chosen type of upgrade this Combat Phase.",
 	cost: 4,
 	skill: 6,
 	talents: 1,
@@ -2418,7 +2418,7 @@ module.exports = [
 	set: ["71523"],
 	name: "Mr. Spock",
 	unique: true,
-	text: "Your ship may perform a  [target-lock] or [scan] Action as a free Action each round.",
+	text: "Your ship may perform a    [target-lock] or [scan] Action as a free Action each round.",
 	factions: ["federation"],
 	cost: 4,
 	skill: 6,
@@ -3178,7 +3178,41 @@ module.exports = [
 	text: "<b>SETUP:</b> Place 8 Drone Tokens on this card.\n-----------------------------------\n<b>EACH TIME AN OPPOSING SHIP WITHIN RANGE PERFORMS AN [evade] , [scan] , OR [battlestations] ACTION:</b> Spend 1 Drone Token on this card and target that opposing ship.\nPerform the same Action as a Free Action and Place an [aux] Token beside the target ship.",
 	unique: true,
 	factions: ["federation","borg"]
-}, {
+},{
+	type: "captain",
+	id: "Cap830",
+	set: ["75008"],
+	name: "Muroc",
+	cost: 3,
+	skill: 7,
+	talents: 1,
+	text: "<b>WHEN ATTACKING:</b> During the Modify Attack Dice Step, if there is a [scan] Token beside this ship:\n\nConvert 1 [blank] into 1 [hit].  If the defending ship has an independent Captain equipped to it, convert 1 [blank] into 1 [crit] instead.",
+	unique: true,
+	factions: ["vulcan"]
+},{
+	type: "captain",
+	id: "Cap832",
+	set: ["75008"],
+	name: "T'Pau",
+	cost: 4,
+	skill: 5,
+	talents: 1,
+	text: "<b>END PHASE:</b> If this ship has a [scan] Token beside it:\n\nReplace one [scan] Token with an [evade] Token and a [battlestation] Token.  The [evade] Token and [battlestation] Token gained from this effect do not get removed this End Phase.",
+	unique: true,
+	factions: ["vulcan"]
+},{
+	type: "captain",
+	id: "Cap831",
+	set: ["75008"],
+	name: "Solok",
+	cost: 4,
+	skill: 7,
+	talents: 1,
+	text: "<b>PERFORM ACTION STEP:</b> When this ship performs a [scan] Action, target an opposing ship with a face down Maneuver Dial.\nLook at the target ship's Maneuver Dial and perform a [sensor-echo] Action as a Free Action using a 1 [straight] Maneuver Template, even if this ship is not Cloaked.",
+	unique: true,
+	range: "1 - 2",
+	factions: ["federation","vulcan"]
+},{
 	type: "captain",
 	id: "Cap826",
 	set: ["75009"],

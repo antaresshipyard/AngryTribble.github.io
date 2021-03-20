@@ -21,6 +21,27 @@ module.exports = [{
 	squadron: false
 }, {
 	type: "ship",
+	id: "S338",
+	set: ["75008"],
+	name: "Kir'Shara",
+	class: "D'Kyr Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 5,
+	shields: 4,
+	cost: 24,
+	text: "<b>WHEN ATTACKING:</b> During the Modify Attack Dice Step, if there is a [scan] Token beside this ship.\n\nConvert up to 2 [battlestations] into 1 [hit] each.",
+	unique: true,
+	factions: ["vulcan"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
 	id: "S330",
 	set: ["75008"],
 	name: "V'Shar",
@@ -32,7 +53,7 @@ module.exports = [{
 	hull: 5,
 	shields: 4,
 	cost: 25,
-	text: "(PREVIEW OF FUTURE EXPANSION)\n<b>COMBAT PHASE:</b> Spend a [scan] Token from beside this ship.\nThe next attack this ship makes with its Primary Weapon this game round ignores the defending ship's Shields.",
+	text: "<b>COMBAT PHASE:</b> Spend a [scan] Token from beside this ship.\nThe next attack this ship makes with its Primary Weapon this game round ignores the defending ship's Shields.",
 	unique: true,
 	factions: ["vulcan"],
 	intercept: {
@@ -41,6 +62,48 @@ module.exports = [{
 	},
 	squadron: false
 }, {
+	type: "ship",
+	id: "S337",
+	set: ["75008"],
+	name: "U.S.S. Intrepid",
+	class: "Constitution Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "weapon", "crew", "crew"],
+	attack: 3,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 20,
+	text: "<b>FREE ACTION:</b>\nPlace an [aux] Token beside this ship and target a friendly ship within Range 1-2.\n\nPlace a [scan] Token and an [evade] Token beside this ship and target ship.",
+	unique: true,
+	factions: ["federation","vulcan"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+},{
+	type: "ship",
+	id: "S335",
+	set: ["75008"],
+	name: "U.S.S. T'Kumbra",
+	class: "Nebula Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "tech", "weapon", "crew", "crew"],
+	attack: 4,
+	agility: 1,
+	hull: 4,
+	shields: 4,
+	cost: 22,
+	text: "All Captains, Admirals, and [crew] Upgrades equipped to this ship cost -1 SP.\n<b>WHEN THIS SHIP PERFORMS A [scan] ACTION:</b> \nPlace an additional [scan] Token beside this ship.",
+	unique: true,
+	factions: ["federation","vulcan"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+},{
 	type: "ship",
 	id: "S323",
 	set: ["75006"],
@@ -1102,6 +1165,28 @@ module.exports = [{
 	class: "Nebula Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
 	upgrades: ["tech", "weapon", "crew", "crew"],
+	text: "Usable in Star Trek Alliance.\n(Captain Skill 5+).\n\nCard and model did not come with Star Trek Alliance.",
+	alliance: true,
+	attack: 4,
+	agility: 1,
+	hull: 4,
+	shields: 3,
+	cost: 19,
+	unique: false,
+	factions: ["federation"],
+	intercept: {
+		ship: {},
+		fleet: {}
+	},
+	squadron: false
+}, {
+	type: "ship",
+	id: "S336",
+	set: ["75008"],
+	name: "Federation Starship",
+	class: "Nebula Class",
+	actions: ["evade", "target-lock", "scan", "battlestations"],
+	upgrades: ["tech", "weapon", "weapon", "crew"],
 	text: "Usable in Star Trek Alliance.\n(Captain Skill 5+).\n\nCard and model did not come with Star Trek Alliance.",
 	alliance: true,
 	attack: 4,
@@ -3675,7 +3760,7 @@ module.exports = [{
 	agility: 1,
 	hull: 5,
 	shields: 3,
-	cost: 24,
+	cost: 19,
 	text: "",
 	unique: false,
 	factions: ["vulcan"],

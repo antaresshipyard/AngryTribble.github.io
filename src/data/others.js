@@ -1,19 +1,19 @@
 module.exports = [{
 	type: "token",
 	id: "rule_love_crysatal",
-	set: ["75006"],
+	set: ["AdditionalRules","75006"],
 	name: "Love Crystal Token",
 	text: "When a [crew] Upgrade with a Love Crystal Token becomes disabled the player who placed that Love Crystal Token on that [crew] Upgrade chooses and disables another [crew] Upgrade with a Love Crystal Token equipped to the same ship.\n\nWhen a [crew] Upgrade with a Love Crystal Token is discarded the player who placed that Love Crystal Token on that [crew] Upgrade chooses and discards another [crew] Upgrade with a Love Crystal Token equipped to the same ship.\n\nWhen a [crew] Upgrade with a Love Crystal Token has one or more [time] Tokens placed on it, the player who placed that Love Crystal Token on that [crew] Upgrade choses another [crew] Upgrade with a Love Crystal Token equipped to the same ship and places the same amount of [time] Tokens on it."
 }, {
 	type: "token",
 	id: "rule_specialzation",
-	set: ["75005"],
+	set: ["AdditionalRules","75005"],
 	name: "Specialization Cards (SCS)",
 	text: "Specialization Cards(SCs) are two-sided cards featuring the [specialization] symbol. This card contains additional rules that pertain to SCs.\n1. During Setup choose which side each of your SCs will start on.\n2. If a SC is flipped while it is disabled, it remains disabled.\n3. If a SC is flipped while it has [time] Tokens, the [time] Tokens remain on it.\n4 If a SC that has an [talent] Upgrade equipped to it is flipped the [talent] remains equipped to it.\n5 Players only earn Fleet Points for the SP cost that was paid during Fleet Construction.\n6. When flipping an SC that SC remains equipped to the ship, even if it exceeds taht ship's restrictions.\n7. You may not flip a SC to its Captain or Admiral side if it would cause you to have more then one Captain on a ship or more then one Admiral in your Fleet."
 }, {
 	type: "token",
 	id: "rule_BMGT",
-	set: ["75003"],
+	set: ["AdditionalRules","75003"],
 	name: "Bio-Mimetic Gel Rules",
 	text: "While an Upgrade has a Bio-Mimetic Gel Token (BMGT) on it, it gains the following text based on its upgrade type:\n\n[crew]: The ship that placed the BMGT on this [crew] Upgrade may spend the BMGT to use the ability of this [crew] Upgrade.\n\n[weapon]: When this [weapon] Upgrade deals damage to an opposing ship’s Hull, the ship that placed the BMGT on this [weapon] Upgrade may spend the BMGT to discard 1 [crew] Upgrade of their choice equipped to the defending ship.\n\n[tech]: When the ability of this [tech] Upgrade is used, the ship that placed the BMGT on this [tech] Upgrade may spend the BMGT to place 2 [time] Tokens on each [crew] Upgrade equipped to this ship.\n-----------------------------------\nWhen a BMGT is spent, roll 1 attack die. If a [battlestations] result is rolled, discard both the “Bio-mimetic Gel” Upgrade Card and the target Upgrade the BMGT was on."
 }, {
@@ -28,6 +28,12 @@ module.exports = [{
 	set: ["AdditionalRules", "71795", "OPWebPrize"],
 	name: "Energy Web Token",
 	text: "ENERGY WEB\n\nEWT's are treated as Obstacles but do not inflict normal Obstacle damage.\n\nA ship whose base or Maneuver Template overlaps an EWT, or a ship that has an EWT placed on top of it, must roll 1 attack die for every 2 EWTs that you have in the play area, rounded up (max 10 dice) Any [hit] or [crit] Damages the target ship as Normal. The affected ship does not roll any defense dice.\n\nNOTE: Tholian ships are immune to the effects of EWTs and may move and/or fire though them without penalty."
+},{
+	type: "token",
+	id: "rule_ambassador",
+	set: ["AdditionalRules","75008"],
+	name: "Ambassador Cards",
+	text: ""
 }, {
 	type: "token",
 	id: "rule_admiral",
