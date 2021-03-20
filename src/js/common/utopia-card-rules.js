@@ -9373,13 +9373,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 "ship:S335":{
 	intercept: {
 		ship: {
-			cost: function(upgrade, ship, fleet, cost) {
-				if( checkUpgrade("crew", upgrade, ship) )
-					return resolve(upgrade, ship, fleet, cost) - 1;
-				return cost;
+			cost: function(card,ship,fleet,cost) {
+				var modifier = 0;
+				if ( card.type == "crew" )
+					modifier = 1
+				return resolve(card, ship, fleet, cost) - modifier;
+				}
 			}
-		}
-	},
+		},
 	intercept: {
 		ship: {
 			cost: function(card,ship,fleet,cost) {
