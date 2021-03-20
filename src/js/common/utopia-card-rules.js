@@ -9583,6 +9583,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		}
 	},
 
+	//Tora Ziyal
+	"crew:C365":{
+		factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+		}		
+},
+
 	//Obsidian Order
 	"talent:E204":{
 		canEquipFaction: function(upgrade,ship,fleet) {
