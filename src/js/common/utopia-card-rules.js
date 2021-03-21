@@ -9422,7 +9422,20 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		"crew:C369":{
 			factionPenalty: function(upgrade, ship, fleet) {
 			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "federation", ship, fleet ) ? 0 : 1;
-			}},
+		},
+				upgradeSlots: [ {
+					type: ["tech"],
+					rules: "Free Stone of Gol Only",
+					canEquip: function(upgrade) {
+						return upgrade.name == "Stone of Gol";
+					},
+					intercept: {
+						ship: {
+							cost: function() { return 0; }
+						}
+					}
+				} ]
+	},
 
 	//Vorik
 		"crew:C368":{
