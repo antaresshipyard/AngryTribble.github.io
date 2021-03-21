@@ -9485,12 +9485,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Science Vessel Variant
 		"tech:T266":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "D'Kyr Class";
+				return onePerShip("Science Vessel Variant") && (ship.class == "D'Kyr Class" || ship.class == "Suurok Class");
 			},
-				canEquip: function(upgrade,ship,fleet) {
-					return ship.class == "Suurok Class";
-				},
-			canEquip: onePerShip("Science Vessel Variant"),
 			intercept: {
 				ship: {
 					shields: function(card,ship,fleet,shields) {
@@ -9510,12 +9506,8 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//Combat Vessel Variant
 		"tech:T265":{
 			canEquip: function(upgrade,ship,fleet) {
-				return ship.class == "D'Kyr Class";
+				return onePerShip("Combat Vessel Variant") && (ship.class == "D'Kyr Class" || ship.class == "Suurok Class");
 			},
-				canEquip: function(upgrade,ship,fleet) {
-					return ship.class == "Suurok Class";
-				},
-				canEquip: onePerShip("Combat Vessel Variant"),
 				intercept: {
 					ship: {
 						attack: function(card,ship,fleet,attack) {
