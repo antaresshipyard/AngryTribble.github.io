@@ -491,7 +491,7 @@ module.exports = [
 	set: ["75008"],
 	name: "Stone of Gol",
 	cost: 3,
-	text: "<b>ACTION:</b>Place 3 [time] Tokens on this card and target a [crew] Upgrade equipped to an opposing ship.\nRoll a number of attack dice equal to the printed SP cost of the target [crew] Upgrade. If at least 1 [critical] is rolled, discard the target [crew] Upgrade. Otherwise, place 1 [time] Token on that [crew] Upgrade for each [hit]. (<i>Non-Vulcan ship costs +5 SP</i>)",
+	text: "<b>ACTION:</b>Place 3 [time] Tokens on this card and target a [crew] Upgrade equipped to an opposing ship.\nRoll a number of attack dice equal to the printed SP cost of the target [crew] Upgrade. If at least 1 [crit] is rolled, discard the target [crew] Upgrade. Otherwise, place 1 [time] Token on that [crew] Upgrade for each [hit]. (<i>Non-Vulcan ship costs +5 SP</i>)",
 	unique: true,
 	range: "1",
 	factions: ["vulcan"]
