@@ -7342,7 +7342,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 					 * to the ship itself.
 					 * TODO Upgrade values only sort on base card value, fix this at some point
 					 */
-					cost: function(card,ship,fleet,cost) {
+					cost:{
+					priority: 100,
+					fn:	function(card,ship,fleet,cost) {
 						var modifier = 0;
 
 						// If we have intercepted the ship card, factor in the discount
@@ -7386,6 +7388,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return resolve(card, ship, fleet, cost) - modifier;
 					}
 				}
+			}
 			}
 		},
 
