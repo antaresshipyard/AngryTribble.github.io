@@ -9489,10 +9489,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			},
 			intercept: {
 				ship: {
-					shields: function(card,ship,fleet,shields) {
+					agility: function(card,ship,fleet,agility) {
 						if( card == ship )
-							return resolve(card,ship,fleet,shields) + 1;
-						return shields;
+							return resolve(card,ship,fleet,agility) + 1;
+						return agility;
 					},
 					hull: function(card,ship,fleet,hull) {
 							if( card == ship )
