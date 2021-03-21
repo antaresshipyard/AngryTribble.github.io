@@ -377,7 +377,7 @@ module.exports = [
  		id: "T262",
 		set: ["75009"],
 		name: "Type-3 Galor Class",
-		text: "Replace the Shield Value of this ship with its printed Shield Value +2.",
+		text: "Replace the Shield Value of this ship with its printed Shield Value +2.\n\n(</i>Galor Class Only</i>)",
 		cost: 4,
   	oneperShip: true,
 		shipLimit: true,

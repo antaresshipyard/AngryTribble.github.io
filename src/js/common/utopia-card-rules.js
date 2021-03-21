@@ -9374,33 +9374,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	intercept: {
 		ship: {
 			cost: function(card,ship,fleet,cost) {
-				var modifier = 0;
-				if ( card.type == "crew" )
-					modifier = 1
-				return resolve(card, ship, fleet, cost) - modifier;
-				}
+				if(card.type == "captain" || card.type == "admiral" || card.type == "crew")
+					cost = resolve(card, ship, fleet, cost) - 1;
+				return cost;
+			}
 			}
 		},
-	intercept: {
-		ship: {
-			cost: function(card,ship,fleet,cost) {
-				var modifier = 0;
-				if ( card.type == "admiral" )
-					modifier = 1
-				return resolve(card, ship, fleet, cost) - modifier;
-				}
-			}
-		},
-		intercept: {
-			ship: {
-				cost: function(card,ship,fleet,cost) {
-					var modifier = 0;
-					if ( card.type == "captain" )
-						modifier = 1
-					return resolve(card, ship, fleet, cost) - modifier;
-					}
-				}
-			},
 },
 
 	//T'Pol Captain
@@ -9647,13 +9626,9 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Phase Disruptor Array
 	"weapon:W210":{
-		canEquip: onePerShip("Phase Disruptor Array"),
 		canEquip: function(upgrade,ship,fleet) {
-			return ship.class == "Cardassian Galor Class";
-		},
-		canEquip: function(upgrade,ship,fleet) {
-			return ship.class == "Cardassian Keldon Class";
-		},
+			return onePerShip("Phase Disruptor Array") && (ship.class == "Cardassian Galor Class" || ship.class == "Cardassian Keldon Class");
+		}
 	},
 
 	//Sensor Ghost
@@ -9663,20 +9638,16 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 
 	//Uridium Alloy
 	"tech:T261":{
-		canEquip: onePerShip("Uridium Alloy"),
 		canEquip: function(upgrade,ship,fleet) {
-			return ship.class == "Cardassian Galor Class";
-		},
-		canEquip: function(upgrade,ship,fleet) {
-			return ship.class == "Cardassian Keldon Class";
+			return onePerShip("Uridium Alloy") && (ship.class == "Cardassian Galor Class" || ship.class == "Cardassian Keldon Class");
 		}
+
 	},
 
 	//Type-3 Galor Class
-	"tech:T261":{
-		canEquip: onePerShip("Type-3 Galor Class"),
+	"tech:T262":{
 		canEquip: function(upgrade,ship,fleet) {
-			return ship.class == "Cardassian Galor Class";
+			return onePerShip("Type-3 Galor Class") && ship.class == "Cardassian Galor Class";
 		},
 		intercept: {
 			ship: {
