@@ -9377,8 +9377,12 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	intercept: {
 		ship: {
 			cost: function(upgrade, ship, fleet, cost) {
-			if(($factions.hasFaction(card,"vulcan", ship, fleet)) && (card.type == "captain" || card.type == "admiral" || card.type == "crew"))
+			if($factions.hasFaction(card,"vulcan", ship, fleet) && card.type == "captain")
 					return resolve(card, ship, fleet, cost) - 1;
+		  if($factions.hasFaction(card,"vulcan", ship, fleet) && card.type == "admiral")
+		  		return resolve(card, ship, fleet, cost) - 1;
+			if($factions.hasFaction(card,"vulcan", ship, fleet) && card.type == "crew")
+			 		return resolve(card, ship, fleet, cost) - 1;
 				return cost;
 		  	},
 			}
