@@ -9377,13 +9377,13 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	intercept: {
 		ship: {
 			cost: function(upgrade, ship, fleet, cost) {
-			if(($factions.hasFaction(upgrade,"vulcan", ship, fleet)) && (card.type == "captain" || card.type == "admiral" || card.type == "crew"))
-					return resolve(upgrade, ship, fleet, cost) - 1;
+			if(($factions.hasFaction(card,"vulcan", ship, fleet)) && (card.type == "captain" || card.type == "admiral" || card.type == "crew"))
+					return resolve(card, ship, fleet, cost) - 1;
 				return cost;
-			},
+		  	},
 			}
-			}
-		},
+		}
+	},
 
 	//T'Pol Captain
 		"captain:Cap662":{
