@@ -179,7 +179,7 @@ module.exports = [{
 	hull: 4,
 	shields: 4,
 	cost: 22,
-	text: "All Captains, Admirals, and [crew] Upgrades equipped to this ship cost -1 SP.\n<b>WHEN THIS SHIP PERFORMS A [scan] ACTION:</b> \nPlace an additional [scan] Token beside this ship.",
+	text: "All Vulcan Captains, Admirals, and [crew] Upgrades equipped to this ship cost -1 SP.\n<b>WHEN THIS SHIP PERFORMS A [scan] ACTION:</b> \nPlace an additional [scan] Token beside this ship.",
 	unique: true,
 	factions: ["federation","vulcan"],
 	intercept: {

@@ -9376,14 +9376,14 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 "ship:S335":{
 	intercept: {
 		ship: {
-			cost: function(card,ship,fleet,cost) {
-				if(card.type == "captain" || card.type == "admiral" || card.type == "crew")
-					cost = resolve(card, ship, fleet, cost) - 1;
+			cost: function(upgrade, ship, fleet, cost) {
+			if(($factions.hasFaction(upgrade,"vulcan", ship, fleet)) && (card.type == "captain" || card.type == "admiral" || card.type == "crew"))
+					return resolve(upgrade, ship, fleet, cost) - 1;
 				return cost;
+			},
 			}
 			}
 		},
-},
 
 	//T'Pol Captain
 		"captain:Cap662":{
