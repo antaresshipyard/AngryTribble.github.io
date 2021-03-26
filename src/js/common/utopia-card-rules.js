@@ -10038,7 +10038,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 
 		"fleet-captain:R010g": {
-			// Only equip if captain unique
+			//  Only equip if captain unique
 			canEquip: function(upgrade,ship,fleet) {
 				return !ship.captain || ship.captain.unique;
 			},
@@ -10049,15 +10049,15 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return captain.unique;
 					},
 					// Add independent faction to captain
-					factions: function(card,ship,fleet,factions) {
-						factions = factions || card.factions;
+					factions: function(card,ship,fleet) {
+						var factions = card.factions;
 						if( card == ship.captain && factions.indexOf("independent") < 0 )
 							return factions.concat(["independent"]);
 						return factions;
-					},
+					}
 				},
 				fleet: {
-					// All weapons cost -1 SP
+					// All weapon cost -1 SP
 					cost: function(upgrade, ship, fleet, cost) {
 						if( checkUpgrade("weapon", upgrade, ship) )
 							return resolve(upgrade, ship, fleet, cost) - 1;
@@ -10067,7 +10067,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}
 		},
 
-		"fleet-captain:R010g": {
+		"fleet-captain:R010h": {
 			// Only equip if captain unique
 			canEquip: function(upgrade,ship,fleet) {
 				return !ship.captain || ship.captain.unique;

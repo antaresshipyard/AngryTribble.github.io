@@ -263,7 +263,7 @@ module.exports = [{
 	crewAdd: 0
 }, {
 	type: "fleet-captain",
-	id: "R010g",
+	id: "R010h",
 	set: ["CollectiveOP2"],
 	name: "Independent (Dominion)",
 	factions: ["independent"],
