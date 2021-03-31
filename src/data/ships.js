@@ -52,7 +52,7 @@ module.exports = [{
 	agility: 1,
 	hull: 4,
 	shields: 3,
-	cost: 24,
+	cost: 22,
 	text: "If there are only Dominion and/or Romulan cards equipped to this ship, add the [cloak] and [sensor-echo] Actions to this ship's Action Bar.\n<b>WHEN A FRIENDLY SHIP WITHIN RANGE 1 PERFORMS THE CLOAK ACTION:</b> This ship may perform the [cloak] Action as a Free Action.",
 	unique: true,
 	factions: ["dominion"],
@@ -5048,7 +5048,7 @@ module.exports = [{
 	hull: 3,
 	shields: 2,
 	cost: 22,
-	text: "",
+	text: "<b>( ERRATA )</b>",
 	unique: false,
 	factions: ["mirror-universe"],
 	intercept: {

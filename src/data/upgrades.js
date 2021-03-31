@@ -1,4 +1,14 @@
 module.exports = [
+//	{
+//		type:"crew",
+//		id:"C999",
+//		set:["AdditionalRules"],
+//		name:"Prudent Andorian",
+//		cost: 9,
+//		text: "Just a test card doing some prudent testing.  Any ship equipped with this card has an owner that foolishly wastes squadron points.",
+//		faq: true,
+//		factions: ["independent"]
+//	},
 	{
 		type:"tech",
 		id:"T259",
@@ -2118,7 +2128,7 @@ module.exports = [
 	name: "Tactical Station",
 	cost: 4,
 	text: "Add 1 [weapon] to this ships Upgrade Bar.\n-----------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\nThis ship rolls +1 attack die this game round.\n-----------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nThis ship rolls +2 attack dice this game round.\n<b>( ERRATA )</b>",
-	OnePerShip: true,
+	unique: true,
 	factions: ["federation"]
 }, {
 	type: "weapon",
@@ -3061,9 +3071,9 @@ module.exports = [
 	set: ["72263"],
 	name: "Holo-Communicator",
 	cost: 5,
-	text: "During the Activation Phase, you may disable this card to target a friendly ship within Range 1-2.  If you do so, you may perform the Action listed on that ship's Captain Card.\n\nNo ship may be equipped with more than one \"Holo-Communicator\" Upgrade.",
-	unique: false,
-	OnePerShip: true,
+	text: "<b>ACTION:</b> Disable this card and target a Captain equipped to a friendly ship.\n\nThis ship performs the Action listed on the target Captain as a Free Action.\n\n<b>( ERRATA )</b>",
+	unique: true,
+	range: "1 - 2",
 	factions: ["federation"]
 }, {
 	type: "tech",
@@ -8887,7 +8897,7 @@ module.exports = [
 	set: ["71529"],
 	name: "Multi-Targeting Phaser Banks",
 	unique: false,
-	text: "When you perform a    [target-lock] action, you may disable this card to acquire a 2nd target lock on a different enemy ship within range 1-3 of your ship. While you have this upgrade on your ship, you may have up to 2 different enemy ships target locked at the same time.\n<b>( ERRATA )</b>",
+	text: "When you perform a    [target-lock] action, you may disable this card to acquire a 2nd target lock on a different enemy ship within range 1-3 of your ship. While you have this upgrade on your ship, you may have up to 2 different enemy ships target locked at the same time even if this card is disabled.\n<b>( ERRATA )</b>",
 	factions: ["mirror-universe"],
 	cost: 5,
 	skill: 0,
@@ -9004,7 +9014,7 @@ module.exports = [
 	set: ["71529"],
 	name: "Strafing Run",
 	unique: true,
-	text: "<b>ACTION:</b> If you performed a Maneuver with a number of 3 or higher this round, target an enemy ship within Range 1-3 that is not in your firing arc. Discard this card to immediately make 1 free attack against that ship with 4 attack dice. Treat this attack as if it was fired with a Primary Weapon.",
+	text: "<b>ACTION:</b> If you performed a Maneuver with a number of 3 or higher this round, target an enemy ship within Range 1-3 that is not in your firing arc. Discard this card to immediately make 1 free attack against that ship with 4 attack dice. Treat this attack as if it was fired with a Primary Weapon.\n\n<b>( ERRATA )</b>",
 	factions: ["mirror-universe"],
 	cost: 5,
 	skill: 0,
@@ -9407,7 +9417,7 @@ module.exports = [
 	set: ["71535"],
 	name: "Intendant's Orders",
 	unique: true,
-	text: "During the Planning Phase, you may disable this card to remove up to 2 Disabled Upgrade Tokens from your [crew] Upgrades.",
+	text: "During the Planning Phase, you may disable this card to remove up to 2 Disabled Upgrade Tokens from your [crew] Upgrades.\n\n<b>( ERRATA )</b>",
 	factions: ["mirror-universe"],
 	cost: 2,
 	skill: 0,
@@ -9420,7 +9430,7 @@ module.exports = [
 	set: ["71535"],
 	name: "Make It So!",
 	unique: true,
-	text: "During the Activation Phase, after you move, you may discard this card and disable one of your [crew] Upgrades to perform one additional Action this round as a free Action.",
+	text: "During the Activation Phase, after you move, you may discard this card and disable one of your [crew] Upgrades to perform one additional Action this round as a free Action.\n\n<b>( ERRATA )</b>",
 	factions: ["mirror-universe"],
 	cost: 3,
 	skill: 0,

@@ -4,6 +4,12 @@ module.exports = [{
 	set: ["AdditionalRules","75006"],
 	name: "Love Crystal Token",
 	text: "When a [crew] Upgrade with a Love Crystal Token becomes disabled the player who placed that Love Crystal Token on that [crew] Upgrade chooses and disables another [crew] Upgrade with a Love Crystal Token equipped to the same ship.\n\nWhen a [crew] Upgrade with a Love Crystal Token is discarded the player who placed that Love Crystal Token on that [crew] Upgrade chooses and discards another [crew] Upgrade with a Love Crystal Token equipped to the same ship.\n\nWhen a [crew] Upgrade with a Love Crystal Token has one or more [time] Tokens placed on it, the player who placed that Love Crystal Token on that [crew] Upgrade choses another [crew] Upgrade with a Love Crystal Token equipped to the same ship and places the same amount of [time] Tokens on it."
+},{
+	type: "token",
+	id: "rule_specialzation",
+	set: ["AdditionalRules","71283", "71444", "71513a", "72283"],
+	name: "Borg Tractor Beam Token (BTBT)",
+	text: "This card explains the rules for a Borg Tractor Beam Token and serves as a reference to remind players of its effect.\n\nA ship with a white BTBT assigned to it follows these special rules:\n\n1) As soon as the ship receives the BTBT, disable 2 of that ship's Active Shields (if the ship was cloaked, remove the [cloak] Token and raise all of its Shields except 2).\n\n2) While the ship has the BTB, it cannot raise its Shields or Cloak.\n\n3) During the Planning Phase, the owner may not select a Manuever whose number is greater than 2.\n\n4) At the end of the Activation Pahse, if the ship is no longer within Range 1 of the ship with the corresponding BTBT (the one that matches the white token's letter), remove the BTBTs from both ships."
 }, {
 	type: "token",
 	id: "rule_specialzation",

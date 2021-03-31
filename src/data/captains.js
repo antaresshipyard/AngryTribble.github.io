@@ -1326,7 +1326,7 @@ module.exports = [
 	set: ["71527"],
 	name: "Kuvak",
 	unique: true,
-	text: "After you move, if you perform an [evade] Action, you may place 2 [evade] Tokens beside your ship instead of 1 if your ship is not in the forward firing arc of any enemy ships.",
+	text: "After you move, if you perform an [evade] Action, you may place 2 [evade] Tokens beside your ship instead of 1 if your ship is not in the forward firing arc of any enemy ships.\n\n<b>( ERRATA )</b>",
 	factions: ["vulcan"],
 	cost: 2,
 	skill: 4,
