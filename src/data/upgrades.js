@@ -9,7 +9,221 @@ module.exports = [
 //		faq: true,
 //		factions: ["independent"]
 //	},
-	{
+{
+type: "weapon",
+id:"W217",
+set:["75010"],
+name:"Waylay",
+cost: 2,
+text: "<b>Not Released Yet</b>\nThe attack value of this [weapon] is this ship's Primary Weapon Value.\n<b>ATTACK:</b> Place 2 [time] Tokens on this card and target an opposing ship\nIf this card is equipped to a B'rel Class ship, place an [aux] Token beside the defending ship.\n----------------------------------------\nAfter making this attack, this ship may perform a 1 white [bank-left] or 1 white [bank-right] and place an [evade] Token beside this ship.",
+range: "1 - 2",
+frontarc: true,
+hullcontraint: "3-",
+attack: "*",
+factions: ["klingon"]
+},{
+type: "weapon",
+id:"W216",
+set:["75010"],
+name:"Concussive Charges",
+cost: 2,
+text: "<b>Not Released Yet</b>\nThe Attack Value of this [weapon] is the ship's Primary Weapon Value.\n<b>ATTACK:</b> Spend this ship's [cloak] Token, raise its Shields, place 2 [time] Tokens on this card, and target an opposing ship.\nIf this card is equipped to a K't'inga Class Ship, it rolls +1 attack die. For each uncancelled [hit] or [crit], remove up to 1 Token of your choice beside the defending ship.",
+oneperShip: true,
+range: "1 - 2",
+shipklingon: true,
+frontarc: true,
+reararc: true,
+attack: "*",
+factions: ["klingon"]
+},{
+type: "tech",
+id:"T273",
+set:["75010"],
+name:"Science Station",
+cost: 4,
+text: "<b>Not Released Yet</b>\nAdd 1 [tech] to this ship's Upgrade Bar.\n<b>FREE ACTION:</b> If this ship is Cloaked, place 2 [time] Tokens on this card.\n\nPlace 1 [scan] Token beside this ship. If an opposing ship is within this ship's Primary Firing Arc, this ship may perform a [target-lock] Action targeting that opposing ship as a Free Action.",
+oneperShip: true,
+range: "1 - 3",
+factions: ["klingon"]
+},{
+type: "crew",
+id:"C379",
+set:["75010"],
+name:"Klingon Gunner",
+cost: 2,
+text: "<b>Not Released Yet</b>\n<b>WHEN ATTACKING:</b> During the Modify Attack Dice Step, discard this card.\n\nAdd 1 [hit].",
+oneperShip: true,
+factions: ["klingon"]
+},{
+type: "crew",
+id:"C378",
+set:["75010"],
+name:"Mara",
+cost: 2,
+text: "<b>Not Released Yet</b>\nAdd the [scan] Action to this ship's Action Bar.\n----------------------------------------\n<b>WHEN THE CAPTAIN OF THIS SHIP WOULD BE DISABLED OR DISCARDED:</b>\n\nDiscard this card instead.",
+unique: true,
+factions: ["klingon"]
+},{
+type: "crew",
+id:"C377",
+set:["75010"],
+name:"Kolana",
+cost: 2,
+text: "<b>Not Released Yet</b>\n<b>WHEN ONE OR MORE [time] TOKENS WOULD BE PLACED ON A [weapon] UPGRADE EQUIPPED TO THIS SHIP:</b>\n\nPlace 1 fewer [time] Tokens. If this ship is Cloaked and it is a Klingon [weapon] Upgrade, place 2 fewer [time] Tokens instead.",
+unique: true,
+factions: ["klingon"]
+}, {
+type: "crew",
+id:"C376",
+set:["75010"],
+name:"Ch'Targh",
+cost: 3,
+text: "<b>Not Released Yet</b>\n<b>END PHASE:</b> Remove an [aux] Token beside this ship.\n\nFlip this ship's [cloak] Token to its Green side.",
+unique: true,
+factions: ["klingon"]
+}, {
+type: "crew",
+id:"C375",
+set:["75010"],
+name:"Yeto",
+cost: 4,
+text: "<b>Not Released Yet</b>\n<b>ACTION:</b> Discard this card and target an opposing ship that has no Active Shields.\n\nDisable 1 [crew] Upgrade on the target ship and/or steal 1 [crew] Upgrade from the target ship, ignoring this ship's restrictions.",
+unique: true,
+range: "1 - 2",
+factions: ["klingon","Independent"]
+}, {
+type: "talent",
+id:"E209",
+set:["75010"],
+name:"A Death Worthy of Sto-Vo-Kor",
+cost: 4,
+text: "<b>Not Released Yet</b>\n<b>ACTION:</b> Discard this card and a [crew] Upgrade equipped to this ship and target an opposing ship.\nDiscard an Upgrade equipped to the target ship. If that Upgrade has a printed SP cost higher than the printed cost of the [crew] Upgrade you discarded, this ship rolls +1 attack die for all attacks this game round.",
+unique: true,
+captainKlingon: true,
+range: "1 - 2",
+factions: ["klingon"]
+}, {
+type: "talent",
+id:"E208",
+set:["75010"],
+name:"Dahar Master",
+cost: 2,
+text: "<b>Not Released Yet</b>\nCan only be equipped to a Captain name Kang, Koloth, or Kor.\n----------------------------------------\nIncrease the Captain Skill of this Captain by 1 for each copy of Dahar Master in your fleet, including this one.\n----------------------------------------\n<b>ACTIVIATION PHASE:</b> This ship may perform a [cloak] Action or [target-lock] Action as a Free Action.  (Utopia Note: Code Unfinished)",
+OnePerShip: true,
+shipKlingon: true,
+factions: ["klingon"]
+}, {
+type:"tech",
+id:"T272",
+set:["75011"],
+name:"Metaphasic Sweep",
+cost: 1,
+text: "<b>Not Released Yet</b>\n<b>FREE ACTION:</b> Discard this card.\n\nPerform a [target-lock] Action as a Free Action, even if the target ship has a [cloak] Token beside it.",
+unique: true,
+factions: ["federation"]
+}, {
+type:"tech",
+id:"T271",
+set:["75011"],
+name:"Ablative Armor",
+cost: 2,
+text: "<b>Not Released Yet</b>\n<b>WHEN DEFENDING:</b> During the Roll Defense Dice Step:\n\nRoll +1 defense die.\n----------------------------------------\n<b>WHEN DEFENDING:</b> During the Modify Attack Dice Step:\nConvert all [crit] to [hit].",
+oneperShip: true,
+shipLimit: true,
+factions: ["federation"]
+}, {
+type:"tech",
+id:"T270",
+set:["75011"],
+name:"Advanced Shields",
+cost: 4,
+text: "<b>Not Released Yet</b>\nAdd 2 to this ship's Shield Value.\n----------------------------------------\n<b>ACTION:</b> Remove this card from play.\n\nRepair up to 3 Shields on this ship.",
+unique: true,
+shipFederation: true,
+hullConstraint: "5+",
+factions: ["federation"]
+}, {
+		type: "weapon",
+		id: "W215",
+		set: ["75011"],
+		name: "Experimental Torpedo Bay",
+		text: "<b>Not Released Yet</b>\n<b>START OF THE GAME:</b> Place a Torpedo [weapon] Upgrade with a printed SP cost of 5 or less face down beneath this card.\n----------------------------------------\n<b>COMBAT PHASE:</b> Discard this card.\nFlip the card beneath this card face up and equip it to this ship, ignoring restrictions. (Utopia Note: Code Unfinished)",
+		cost: 2,
+		unique: true,
+		factions: ["federation"],
+	},{
+		type: "weapon",
+		id: "W214",
+		set: ["75011"],
+		name: "Dorsal Torpedo Pod",
+		text: "<b>Not Released Yet</b>\n<b>WHEN ATTACKING WITH A FEDERATION TORPEDO UPGRADE:</b>\n\nThis ship may target an opposing ship with that Torpedo Upgrade outside of its normal Firing Arcs.\n (<i>Akira Class Only</i>)",
+		cost: 3,
+		OnePerShip: true,
+		factions: ["federation"],
+		shipLimit: true
+	},{
+		type: "weapon",
+		id: "W213",
+		set: ["75011"],
+		name: "Phaser Cannons",
+		text: "<b>Not Released Yet</b>\n<b>ATTACK:</b> Place 3 [time] Tokens on this card and target an opposing ship.\n----------------------------------------\n<b>AFTER ATTACKING WITH THIS [weapon] UPGRADE:</b> You may make an attack with this ship's Primary Weapon.\n (<i>Defiant Class Only</i>)",
+		cost: 3,
+		OnePerShip: true,
+		factions: ["federation"],
+		attack: 4,
+		range: "1 - 2",
+		Frontarc: true,
+		shipLimit: true
+	},{
+	type: "crew",
+	id: "C374",
+	set: ["75011"],
+	name: "Enrique Muniz",
+	unique: true,
+	text: "<b>Not Released Yet</b>\n<b>WHEN ATTACKING OR DEFENDING:</b> Place 2 [time] Tokens on this card and target a friendly ship.\nThis ship may use one [battlestations], [evade], or [scan] Token beside the target ship as if it was beside this ship, this game round.",
+	factions: ["federation"],
+	cost: 2,
+	range: "1 - 2"
+},{
+	type: "crew",
+	id: "C373",
+	set: ["75011"],
+	name: "Sarita Carson",
+	unique: true,
+	text: "<b>Not Released Yet</b>\n<b>COMBAT PHASE:</b> Place 2 [time] Tokens on this card.\n\nPerform a 1 red [straight] or 2 red [straight].",
+	factions: ["federation"],
+	cost: 2,
+},{
+	type: "crew",
+	id: "C372",
+	set: ["75011"],
+	name: "Ezri Dax",
+	unique: true,
+	text: "<b>Not Released Yet</b>\nAdd 1 [crew] to this ship's Upgrade Bar.\n----------------------------------------\n<b>WHENEVER ONE OR MORE [time] TOKENS WOULD BE PLACED ON THIS SHIP'S CAPTAIN ON A [crew] UPGRADE EQUIPPED TO THIS SHIP:</b>\n\nPlace 1 fewer [time] Tokens on that card.",
+	factions: ["federation"],
+	cost: 2,
+},
+{
+	type: "crew",
+	id: "C371",
+	set: ["75011"],
+	name: "Julian Bashier",
+	unique: true,
+	text: "<b>Not Released Yet</b>\n<b>ACTIVIATION PHASE:</b> Target a [crew] Upgrade equipped to this ship or another ship:\nRemove 2 [time] Tokens or a disable Token from the target [crew] Upgrade.  If the targeted [crew] is on an opposing ship, that ship rolls -1 attack die this game round.",
+	factions: ["federation"],
+	cost: 2,
+	range: "1"
+},{
+	type: "crew",
+	id: "C370",
+	set: ["75011"],
+	name: "Kira Nerys",
+	unique: true,
+	text: "<b>Not Released Yet</b>\n<b>FREE ACTION:</b> Place 3 [time] Tokens on this card and target an opposing ship.\n\nDisable a [tech] Upgrade equipped to the target ship, then roll 1 attack die. On a [hit] or [crit], discard 1 [crew] Upgrade equipped to the target ship.",
+	factions: ["federation"],
+	cost: 3,
+	range: "1"
+},{
 		type:"tech",
 		id:"T259",
 		set:["80001"],
@@ -70,7 +284,7 @@ module.exports = [
 	},{
  		type: "weapon",
  		id: "W204",
- 		set: ["80001"],
+ 		set: ["80001","2017core","75011"],
  		name: "Photon Torpedoes",
 		text: "The Attack Value of this [weapon] is this ship's Primary Weapon Value +1.\n---------------------------------\n<b>ATTACK:</b> Spend this ship's  [target-lock] Token, disable this card and target an opposing ship.\n\nThis ship may convert all [blank]  into [battlestations].",
 		FrontArc: true,
@@ -2130,18 +2344,7 @@ module.exports = [
 	text: "Add 1 [weapon] to this ships Upgrade Bar.\n-----------------------------\n<b>WHEN ATTACKING:</b> Disable this card.\nThis ship rolls +1 attack die this game round.\n-----------------------------\n<b>WHEN ATTACKING:</b> Discard this card.\nThis ship rolls +2 attack dice this game round.\n<b>( ERRATA )</b>",
 	unique: true,
 	factions: ["federation"]
-}, {
-	type: "weapon",
-	id: "W169",
-	set: ["2017core"],
-	name: "Photon Torpedoes",
-	cost: 2,
-	text: "The Attack Value of this [weapon] is this ships Primary Weapon Value +1.\n---------------------------------\n<b>ATTACK:</b> Spend this ship's  [target-lock] Token, disable this card and target an opposing ship.\n\nThis ship may convert all [blank]  into [battlestations].",
-	FrontArc: true,
-	RearArc: true,
-	range: "2 - 3",
-	factions: ["federation"]
-}, {
+},{
 	type: "weapon",
 	id: "W168",
 	set: ["2017core"],
@@ -5999,7 +6202,7 @@ module.exports = [
 	set: ["71448"],
 	name: "Shockwave",
 	unique: false,
-	text: "Instead of moving normally during the Activation Phase, you may discard this card and disable 1 of your Torpedoes to disregard your chosen Maneuver and perform a Red \[1 [reverse]\] Full Astern Maneuver instead. \n\nThis upgrade may only be purchased for a Raptor Class ship.",
+	text: "Instead of moving normally during the Activation Phase, you may discard this card and disable 1 of your Torpedoes to disregard your chosen Maneuver and perform a Red 1 [reverse] Full Astern Maneuver instead. \n\nThis upgrade may only be purchased for a Raptor Class ship.",
 	factions: ["klingon"],
 	cost: 2,
 	skill: 0,

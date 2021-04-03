@@ -37,16 +37,10 @@ module.exports = [{
 },{
 	type: "token",
 	id: "rule_ambassador",
-	set: ["AdditionalRules","75008"],
+	set: ["AdditionalRules","75008","75010","75011"],
 	name: "Ambassador Cards",
-	text: ""
-}, {
-	type: "token",
-	id: "rule_admiral",
-	set: ["AdditionalRules"],
-	name: "Admiral Cards",
-	text: ""
-}, {
+	text: "Amabassador cards do not count as Captains, Admirals or Upgrades.\n\nA fleet may only have one Ambassador Card.\n\nYou do not pay a Faction Penalty when equipping an Ambassador to a ship.\n\nAt the start of the game, a player may activate their Ambassador's Negotiation Effect by choosing an opposing ship.  The target of the effect may choose to accept negotiations or deny negotiations.  If negotiations are accepted, players will both be affected in some way.  If negotiations are denied, the opposing player will be affected detrimentally.\n\nIf negotiations have been accepted and the ship the Amabassador Card is equipped to is destroyed by the ship that accepted negotiations, immediately trigger the Negotiations Denied section of the Amabassador Card targeting the ship that accepted the negotiations before removing the ship from the play area.  If both players have Ambassadors, the player with the Initiative Token first enacts their Ambassador card, including any Start of Game effects."
+},{
 	type: "token",
 	id: "rule_muon_token",
 	set: ["AdditionalRules"],

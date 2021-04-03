@@ -10,17 +10,29 @@ module.exports = [{
 	name: "Alliance",
 	releaseDate: "2020-01-31",
 	parentSet: "Core"
-}, {
+},{
+	type: "set",
+	id: "75011",
+	name: "Federation 'Boldly Go'",
+	releaseDate: "2021-06-31",
+	parentSet: "Faction Pack"
+},{
+	type: "set",
+	id: "75010",
+	name: "Klingon 'Blood Oath'",
+	releaseDate: "2021-06-31",
+	parentSet: "Faction Pack"
+},{
 	type: "set",
 	id: "75009",
 	name: "The Cardassian Union",
-	releaseDate: "2019-11-31",
+	releaseDate: "2021-03-17",
 	parentSet: "Faction Pack"
 }, {
 	type: "set",
 	id: "75008",
 	name: "Vulcan 'Live Long and Prosper'",
-	releaseDate: "2019-11-30",
+	releaseDate: "2021-03-17",
 	parentSet: "Faction Pack"
 }, {
 	type: "set",

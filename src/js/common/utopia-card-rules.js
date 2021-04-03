@@ -238,6 +238,167 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return ship && $factions.hasFaction( ship, "ferengi", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "kazon", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "independent", ship, fleet ) ? 0 : 1;
 			}
 		},
+//Klingon Blood Oath Pack
+
+//Waylay
+"weapon:W217":{
+	attack: 0,
+	intercept: {
+		self: {
+			// Attack is same as ship primary + 1
+			attack: function(upgrade,ship,fleet,attack) {
+				if( ship )
+					return valueOf(ship,"attack",ship,fleet);
+				return attack;
+			}
+		}
+	},
+	canEquipFaction: function(upgrade,ship,fleet) {
+		return ship.hull <= 3;
+  },
+},
+
+//Concussive Charges
+"weapon:W216":{
+	attack: 0,
+	intercept: {
+		self: {
+			// Attack is same as ship primary + 1
+			attack: function(upgrade,ship,fleet,attack) {
+				if( ship )
+					return valueOf(ship,"attack",ship,fleet) + 1;
+				return attack;
+			}
+		}
+	},
+	canEquipFaction: function(upgrade,ship,fleet) {
+		return hasFaction(ship,"klingon", ship, fleet);
+   }
+},
+
+//A Death Worthy of Sto-Vo-Kor
+"talent:E209":{
+	canEquipFaction: function(upgrade,ship,fleet) {
+		return hasFaction(ship.captain,"klingon", ship, fleet);
+}},
+
+//Science Station
+"tech:T273":{
+	upgradeSlots: [
+		{
+			type: ["tech"]
+		}
+	]
+},
+
+//Federation Boldly Go Pack
+// Metaphasic Sweep
+"tech:T272": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	}
+},
+// Ablative Armor
+"tech:T271": {
+	canEquip: function(upgrade,ship,fleet) {
+		return ship.class.indexOf( "Defiant Class" ) >= 0;
+	},
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	}
+},
+// Experimental Torpedo Bay
+"weapon:W215": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	},
+	upgradeSlots: [
+		{
+			type: ["weapon"],
+			rules: "Torpedo, 5 SP of less",
+			faceDown: true,
+			intercept: {
+				ship: {
+					canEquip: function(upgrade,ship,fleet) {
+						// TODO Prevent use of upgrades without a defined cost (e.g. Dorsal Phaser Array)
+						var cost = valueOf(upgrade,"cost",ship,fleet);
+						return cost <= 5;
+					return canEquip;
+					},
+					free: function() {
+						return true;
+					}
+				}
+			}
+		}
+	]
+},
+// Advanced Shields
+"tech:T270": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	},
+	canEquipFaction: function(upgrade,ship,fleet) {
+		return hasFaction(ship,"federation", ship, fleet) && ship.hull >= 5;
+  },
+	intercept: {
+		ship: {
+			shields: function(card,ship,fleet,shields) {
+				if( card == ship )
+					return resolve(card,ship,fleet,shields) + 2;
+				return shields;
+			}
+		}
+	}
+},
+// Dorsal Torpedo Pod
+"weapon:W214": {
+	canEquip: function(upgrade,ship,fleet) {
+		return ship.class.indexOf( "Akira Class" ) >= 0;
+	},
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	}
+},
+// Phaser Cannons
+"weapon:W213": {
+	canEquip: function(upgrade,ship,fleet) {
+		return ship.class.indexOf( "Defiant Class" ) >= 0;
+	},
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	}
+},
+	//Enrique Muniz
+	"crew:C374":{
+		factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+		}
+	},
+	//Sarita Carson
+	"crew:C373":{
+		factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+		}
+	},
+	//Ezri Dax
+	"crew:C372":{
+		factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+		}
+	},
+	//Julian Bashir
+	"crew:C371":{
+		factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+		}
+	},
+	//Kira Nerys
+	"crew:C370":{
+		factionPenalty: function(upgrade, ship, fleet) {
+			return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+		}
+	},
 
 //Alliance
 		//Photon Torpedoes
@@ -8051,7 +8212,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		//All Power to Weapons
 		"talent:E180":{
 			canEquipFaction: function(upgrade,ship,fleet) {
-				return ship.captain && $factions.hasFaction(ship.captain,"dominion", ship, fleet);
+				return ship.captain && $factions.hasFaction(ship.captain,"dominion", ship, fleet) && ship.hull >= 5;
 			}
 		},
 		//Talak'Talan
