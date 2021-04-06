@@ -207,7 +207,7 @@ factions: ["federation"]
 	type: "crew",
 	id: "C371",
 	set: ["75011"],
-	name: "Julian Bashier",
+	name: "Julian Bashir",
 	unique: true,
 	text: "<b>Not Released Yet</b>\n<b>ACTIVIATION PHASE:</b> Target a [crew] Upgrade equipped to this ship or another ship:\nRemove 2 [time] Tokens or a disable Token from the target [crew] Upgrade.  If the targeted [crew] is on an opposing ship, that ship rolls -1 attack die this game round.",
 	factions: ["federation"],

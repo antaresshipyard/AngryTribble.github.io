@@ -214,7 +214,7 @@ module.exports = [{
 	name: "Vetar",
 	class: "Cardassian Galor Class",
 	actions: ["evade", "target-lock", "scan"],
-	upgrades: ["tech","tech", "weapon", "weapon","crew"],
+	upgrades: ["tech", "weapon", "weapon","crew"],
 	attack: 4,
 	agility: 1,
 	hull: 4,
