@@ -1,7 +1,7 @@
 module.exports = [{
 	type: "ship",
 	id: "S995",
-	set: ["additionalrules"],
+	set: ["AdditionalRules"],
 	name: "Klingon Starship",
 	class: "Negh'var Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -22,7 +22,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S996",
-	set: ["additional rules"],
+	set: ["AdditionalRules"],
 	name: "K'T'Inga Class",
 	class: "K'T'Inga Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -43,7 +43,7 @@ module.exports = [{
 },{
 	type: "ship",
 	id: "S997",
-	set: ["additonalrules"],
+	set: ["AdditionalRules"],
 	name: "Klingon Starship",
 	class: "K'T'Inga Class",
 	actions: ["evade", "target-lock", "cloak", "sensor-echo"],
@@ -86,7 +86,7 @@ module.exports = [{
 }, {
 	type: "ship",
 	id: "S998",
-	set: ["additionalrules"],
+	set: ["AdditionalRules"],
 	name: "Federation Starship",
 	class: "Miranda Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],

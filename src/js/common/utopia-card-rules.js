@@ -7932,12 +7932,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			}},
 		//Shield Adaption
 		"tech:T155":{
-			//Hull is equal or greater then 4, needs to work with fleet commander
-			canEquip: function( ship, fleet, canEquip) {
-				if( valueOf(ship,"hull",ship,fleet) >= 4 )
-					return false;
-				return canEquip;
-			}},
+			canEquip: function(upgrade,ship,fleet) {
+				return ship.hull >= 4;
+			}
+		},
 		//B'Elanna's codes
 		"tech:T157":{
 			factionPenalty: function(upgrade, ship, fleet) {
@@ -10056,6 +10054,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						if( card == ship )
 							return resolve(card,ship,fleet,hull) + 1;
 						return hull;
+					},
+					canEquip: function(upgrade,ship,fleet) {
+			  	if( upgrade || (upgrade && upgrade.hullconstraint == "4+" && ship.hull >= 3) || (upgrade && upgrade.hullconstraint == "5+" && ship.hull >= 4) || (upgrade && upgrade.hullconstraint == "3-" && ship.hull <= 2))
+						return true;
 					}
 				}
 			}
@@ -10584,7 +10586,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet) {
-				if( upgrade || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+				if( upgrade || (upgrade && upgrade.hullconstraint == "4+" && ship.hull >= 3) || (upgrade && upgrade.hullconstraint == "5+" && ship.hull >= 4) ||  (upgrade && upgrade.hullconstraint == "3-" && ship.hull <= 2))
 						return true;
 					}
 				}
@@ -10600,7 +10602,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet) {
-				if( upgrade || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+				if( upgrade || (upgrade && upgrade.hullconstraint == "4+" && ship.hull >= 3) || (upgrade && upgrade.hullconstraint == "5+" && ship.hull >= 4) ||  (upgrade && upgrade.hullconstraint == "3-" && ship.hull <= 2))
 						return true;
 					}
 				}
@@ -10616,7 +10618,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 			intercept: {
 				ship: {
 					canEquip: function(upgrade,ship,fleet) {
-				if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+				if( upgrade || (upgrade && upgrade.hullconstraint == "4+" && ship.hull >= 3) || (upgrade && upgrade.hullconstraint == "5+" && ship.hull >= 4) ||  (upgrade && upgrade.hullconstraint == "3-" && ship.hull <= 2) )
 						return true;
 					}
 				}
@@ -10648,7 +10650,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return factions;
 					},
 					canEquip: function(upgrade,ship,fleet) {
-						if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						if( upgrade || (upgrade && upgrade.hullconstraint == "4+" && ship.hull >= 3) || (upgrade && upgrade.hullconstraint == "5+" && ship.hull >= 4) || (upgrade && upgrade.hullconstraint == "3-" && ship.hull <= 2) )
 						return true;
 					}
 				}
@@ -10666,7 +10668,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return factions;
 					},
 					canEquip: function(upgrade,ship,fleet) {
-						if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						if( upgrade || (upgrade && upgrade.hullconstraint == "4+" && ship.hull >= 3) || (upgrade && upgrade.hullconstraint == "5+" && ship.hull >= 4) || (upgrade && upgrade.hullconstraint == "3-" && ship.hull <= 2) )
 						return true;
 					}
 				}
@@ -10684,7 +10686,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 						return factions;
 					},
 					canEquip: function(upgrade,ship,fleet) {
-						if( upgrade || (upgrade && upgrade.name == "Aft Torpedo Launcher" && ship.hull >= 3) || (upgrade && upgrade.name == "Shield Adaption" && ship.hull >= 3) )
+						if( upgrade || (upgrade && upgrade.hullconstraint == "4+" && ship.hull >= 3) || (upgrade && upgrade.hullconstraint == "5+" && ship.hull >= 4) || (upgrade && upgrade.hullconstraint == "3-" && ship.hull <= 2) )
 						return true;
 					}
 				}

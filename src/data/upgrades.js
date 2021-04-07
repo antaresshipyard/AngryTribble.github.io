@@ -18,7 +18,7 @@ cost: 2,
 text: "<b>Not Released Yet</b>\nThe attack value of this [weapon] is this ship's Primary Weapon Value.\n<b>ATTACK:</b> Place 2 [time] Tokens on this card and target an opposing ship\nIf this card is equipped to a B'rel Class ship, place an [aux] Token beside the defending ship.\n----------------------------------------\nAfter making this attack, this ship may perform a 1 white [bank-left] or 1 white [bank-right] and place an [evade] Token beside this ship.",
 range: "1 - 2",
 frontarc: true,
-hullcontraint: "3-",
+hullConstraint: "3-",
 attack: "*",
 factions: ["klingon"]
 },{
@@ -3853,8 +3853,8 @@ factions: ["federation"]
 	id: "W141",
 	set: ["72224p"],
 	name: "Photon Torpedoes",
-	cost: 3,
 	attack: 4,
+	cost: 3,
 	range: "2 - 3",
 	text: "<b>ATTACK: (Target Lock)</b> Spend your target lock and place 3 Time Tokens on this card to perform this attack\r\n\r\nIf fired from a Xindi Reptilian warship add +1 attack die.",
 	unique: false,
@@ -12045,6 +12045,7 @@ factions: ["federation"]
 	cost: 3,
 	text: "You may fill one of your [crew], [tech] or [weapon] Upgrade slots with this card.\nWhen attacking with a Photon Torpedoes Upgrade, you may disable this card to target a ship that is not in your forward firing arc.\nThis Upgrade may only be purchased for a ship with a Hull of 4 or greater that does not have a rear firing arc and costs +5 SP if purchased for any non-Federation ship.",
 	unique: false,
+	hullConstraint: "4+",
 	factions: ["federation"]
 }, {
 	type: "crew",
