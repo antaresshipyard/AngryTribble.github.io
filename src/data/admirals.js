@@ -28,6 +28,7 @@ module.exports = [{
 	cost: 5,
 	skill: 2,
 	talents: 1,
+	// faq:true,
 	text: "Add 1 [crew] to this ship's Upgrade Bar.\n----------------------------------------\n<b>FLEET ACTION:</b>\n\nFlip up to 2 Specialization Cards equipped to this ship.",
 	unique: true,
 	factions: ["mirror-universe", "federation"]
@@ -138,6 +139,7 @@ module.exports = [{
 	unique: true,
 	text: "<b>FLEET ACTION:</b> Perform an additional 1 Maneuver (straight, bank or turn).",
 	factions: ["federation"],
+	// faq:true,
 	cost: 3,
 	skill: 1,
 	talents: 0

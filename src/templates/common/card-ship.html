@@ -21,7 +21,7 @@
 
 	<div class="card-border-right pull-right"></div>
 
-	<div class="card-ship-silhouette pull-left"></div>
+	<div class="card-ship-silhouette pull-left"><i ng-if="ship.faq" class="card-faq-icon fs fs-faq pull-left"></i></div>
 
 	<div class="card-ship-class-container text-center">
 		<span class="card-ship-class" ng-class="{'card-ship-class-long': ship.class.length >= 25 }">{{ship.class | uppercase}}</span>
@@ -42,7 +42,6 @@
 	<div class="card-ship-upgrade-bar">
 		<i ng-repeat="upgrade in ship.upgrades track by $index" class="fs fs-{{upgrade.type[0]}}" ng-class="{'card-ship-upgrade-occupied': upgrade.occupant}"></i>
 	</div>
-
 	<div style="clear: both"></div>
 
 </div>

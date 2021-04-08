@@ -6,10 +6,10 @@ module.exports = [
 //		name:"Prudent Andorian",
 //		cost: 9,
 //		text: "Just a test card doing some prudent testing.  Any ship equipped with this card has an owner that foolishly wastes squadron points.",
-//		faq: true,
+//		// faq:true,
 //		factions: ["independent"]
 //	},
-{
+	{
 type: "weapon",
 id:"W217",
 set:["75010"],
@@ -2701,6 +2701,7 @@ factions: ["federation"]
 	cost: 4,
 	text: "<b>WHEN DEFENDING:</b> Disable this card.\n\nThis game round, replace the attacking ship's Primary Weapon Value with 4. For the remainder of the game round, the attacking ship's Primary Weapon Value can not be replaced or modified.",
 	unique: false,
+	// faq:true,
 	OnePerShip: true,
 	hullConstraint: "3+",
 	factions: ["klingon"]
@@ -2951,6 +2952,7 @@ factions: ["federation"]
 	cost: 5,
 	text: "When attacking with Photon Torpedoes, during the Declare Target Step you may discard this card to target 2 or 3 different ships in your forward firing arc with this attack. If you target 2 different ships, each attack is at -1 attack die. If you target 3 different ships, each attack is at -2 attack dice.",
 	unique: true,
+	// faq:true,
 	factions: ["federation"]
 }, {
 	type: "tech",
@@ -4945,6 +4947,7 @@ factions: ["federation"]
 	unique: false,
 	text: "If your ship was just destroyed, discard this card to remove Damage Cards 1 at a time from your Ship Card until the amount of damage is 1 point less than your Hull Value. Flip all remaining Damage Cards face down. ",
 	factions: ["federation"],
+	// faq:true,
 	cost: 5,
 	skill: 0,
 	talents: 0,
@@ -5554,6 +5557,7 @@ factions: ["federation"]
 	unique: true,
 	text: "If you damage an opponent's Hull with a [crit], you may immediately discard this card to search the Damage Deck for a \"Warp Core Breach\" card instead of drawing a random Damage Card. Re-shuffle the Damage Deck when you are done.",
 	factions: ["federation"],
+	// faq:true,
 	cost: 3,
 	skill: 0,
 	talents: 0,

@@ -211,7 +211,7 @@ module.exports = [
  },	 {
  type: "captain",
  id: "Cap120",
- set: ["80000"],
+ set: ["8000// faq:true,
  name: "STA Fed (2 XP)",
  unique: false,
  text: "For Star Trek Alliance Building ONLY.  \n\nAdd as 'Captain' to remove ship cost.  \n\n2 XP spent on Captain Skill.\n\nNot a physical card, used internally on Utopia.",
@@ -1429,6 +1429,7 @@ module.exports = [
 	unique: true,
 	text: "<b>ACTION:</b> Perform an additional 1 Maneuver (straight, bank or turn).",
 	factions: ["federation"],
+	// faq:true,
 	cost: 3,
 	skill: 4,
 	talents: 0
@@ -2367,6 +2368,7 @@ module.exports = [
 	unique: true,
 	text: "<b>ACTION:</b> If you are attacked this round at Range 1, Roll 2 attack dice. Any [hit] or [crit] result damages the attacking ship as normal, even if your ship is destroyed by their attack. The attacking ship does not roll any defense dice. ",
 	factions: ["federation"],
+	// faq:true,
 	cost: 4,
 	skill: 6,
 	talents: 0
@@ -2532,6 +2534,7 @@ module.exports = [
 	unique: true,
 	text: "Your ship may perform a    [target-lock] or [scan] Action as a free Action each round.",
 	factions: ["federation"],
+	// faq:true,
 	cost: 4,
 	skill: 6,
 	talents: 1
@@ -2686,6 +2689,7 @@ module.exports = [
 	unique: true,
 	text: "<b>ACTION:</b> Disable up to 3 of your Upgrades (your choice) to gain +1 attack die on your next attack for each Upgrade you disabled with this Action.",
 	factions: ["mirror-universe"],
+	// faq:true,
 	cost: 4,
 	skill: 6,
 	talents: 1
@@ -3695,6 +3699,7 @@ module.exports = [
 	cost: 6,
 	skill: 9,
 	talents: 1,
+	// faq:true,
 	text: "<b>ACTION:</b> Place a [battlestations] Token beside your ship. When attacking this round, during the Modify Attack Dice Step, you may spend this Token to re-roll up to 2 of your attack dice OR when defending this round, during the Modify Defence Dice step, you may spend this Token to re-roll up to 2 of your defense dice. You may still perform the [battlestations] Action as a free Action this round if possible.",
 	unique: true,
 	factions: ["federation"]
@@ -3706,6 +3711,7 @@ module.exports = [
 	unique: true,
 	text: "Each round, you may perform one of the following actions as a free action: \n\n<font size=\"+2\">[evade] [target-lock] [scan] [battlestations] </font>\n\nYou may use this action even if your ship does not have it in the Action bar. ",
 	factions: ["federation"],
+	// faq:true,
 	cost: 6,
 	skill: 9,
 	talents: 1
