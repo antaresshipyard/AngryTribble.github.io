@@ -6,7 +6,7 @@ module.exports = [
 //		name:"Prudent Andorian",
 //		cost: 9,
 //		text: "Just a test card doing some prudent testing.  Any ship equipped with this card has an owner that foolishly wastes squadron points.",
-//		// faq:true,
+//		faq:true,
 //		factions: ["independent"]
 //	},
 	{
