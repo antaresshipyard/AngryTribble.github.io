@@ -147,7 +147,7 @@ module.exports = [{
 	class: "Akira Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
 	upgrades: ["tech","weapon","weapon", "weapon", "crew"],
-	text: "<b>Not Released Yet</b>\n\nAbility not yet revealed",
+	text: "<b>Not Released Yet</b>\nFederation [weapon] Upgrades equipped to this ship cost -1 SP.\n-----------------------------------\n<b>WHEN ATTACKING WITH A PHOTON TORPEDOS UPGRADE, DURING THE MODIFY ATTACK DICE STEP:</b>\n\nDestroy 1 Active Shield on the defending ship. (Utopia Note: Code not yet added).",
 	attack: 4,
 	agility: 2,
 	hull: 5,
