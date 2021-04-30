@@ -240,6 +240,40 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 		},
 //Klingon Blood Oath Pack
 
+//Kor
+	"captain:Cap004": {
+		upgradeSlots: [ {
+			type: ["talent"],
+			rules: "May equip Dahar Master Elite Talent for 0 SP",
+			intercept: {
+				ship: {
+					// Dahar Master for free
+					cost: function(upgrade, ship, fleet, cost) {
+					if( upgrade.name == "Dahar Master" )
+							return 0;
+						return cost;
+					},
+				}
+			}
+		} ]
+	},
+
+//I.K.S. K'Tanco
+	"ship:S336": {
+		upgradeSlots: [ {
+			type: ["tech"],
+			rules: "Klingon Upgrade, 4 SP cost or less",
+			canEquip: function(upgrade) {
+				return (upgrade.factions == "klingon" && upgrade.cost <= 4);
+			},
+			intercept: {
+				ship: {
+					cost: function() { return 0; }
+				}
+			}
+		} ]
+	},
+
 //Waylay
 "weapon:W217":{
 	attack: 0,
@@ -263,10 +297,10 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 	attack: 0,
 	intercept: {
 		self: {
-			// Attack is same as ship primary + 1
+			// Attack is same as ship primary
 			attack: function(upgrade,ship,fleet,attack) {
 				if( ship )
-					return valueOf(ship,"attack",ship,fleet) + 1;
+					return valueOf(ship,"attack",ship,fleet);
 				return attack;
 			}
 		}
@@ -292,6 +326,76 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 },
 
 //Federation Boldly Go Pack
+
+// Keogh
+"captain:Cap007": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	}
+},
+
+// Worf
+"captain:Cap009": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	}
+},
+
+// Leyton
+"captain:Cap010": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	}
+},
+
+// Ben Sisko
+"captain:Cap006": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	}
+},
+// Jadzia Dax
+"captain:Cap008": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	},
+	// No faction penalty for Klingon Talent.
+	upgradeSlots: cloneSlot( 1 ,
+		{
+			type: ["talent"],
+			rules: "No Faction Penalty for Klingon Elite Talent",
+			intercept: {
+				ship: {
+					factionPenalty: {
+						priority: 100,
+						fn: function(card,ship,fleet,factionPenalty) {
+							if( card.factions == "klingon" )
+								return 0;
+							return factionPenalty;
+						}
+					}
+				}
+			}
+		}
+	)
+},
+
+// Experimental Torpedo Bay
+"weapon:W215": {
+	factionPenalty: function(upgrade, ship, fleet) {
+		return ship && $factions.hasFaction( ship, "bajoran", ship, fleet ) ? 0 : 1 && $factions.hasFaction( ship, "vulcan", ship, fleet ) ? 0 : 1;
+	},
+	// Upgrade slot for torpedo only of printed cost 5 or less
+	upgradeSlots: [ {
+ 	 type: ["weapon"],
+ 	 rules: "Torpedo Upgrade with Printed Cost 5 or less.",
+	 faceDown: true,
+ 	 canEquip: function(upgrade,ship,fleet) {
+		 	return (upgrade.id == "W204" || upgrade.id == "W192" || upgrade.id == "W191" || upgrade.id == "W183" || upgrade.id == "W177" || upgrade.id == "W161" || upgrade.id == "W160" || upgrade.id == "W158" || upgrade.id == "W157"  || upgrade.id == "W008" || upgrade.id == "W004" || upgrade.id == "W003" || upgrade.id == "W002" || upgrade.id == "W009" || upgrade.id == "W154" || upgrade.id == "W152" || upgrade.id == "W145" || upgrade.id == "W142" || upgrade.id == "W141" || upgrade.id == "W137" || upgrade.id == "W128" || upgrade.id == "W122" || upgrade.id == "W120" || upgrade.id == "W119" || upgrade.id == "W118" || upgrade.id == "W117" || upgrade.id == "W116" || upgrade.id == "W114" || upgrade.id == "W112" || upgrade.id == "W105" || upgrade.id == "W100" || upgrade.id == "W088" || upgrade.id == "W082" || upgrade.id == "W081" || upgrade.id == "W079" || upgrade.id == "W078" || upgrade.id == "W074" || upgrade.id == "W072" || upgrade.id == "W067" || upgrade.id == "W059" || upgrade.id == "W050" || upgrade.id == "W039" || upgrade.id == "W038" || upgrade.id == "W031" || upgrade.id == "W195" || upgrade.id == "W016");
+			}
+ 	} ]
+},
+
 // Metaphasic Sweep
 "tech:T272": {
 	factionPenalty: function(upgrade, ship, fleet) {
@@ -9434,7 +9538,7 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 								var UpgradeBarSlots = $.inArray( ship.upgrades )
 						// Count the number of empty upgrade slots
 						$.each( $filter("upgradeSlots")(ship), function(i, slot) {
-							if( slot.occupant == null ) {
+							if( slot.occupant == null && slot.type !== "talent" ) {
 								// For Each count suptract form cost.
 								candidates = candidates + 1;
 								}

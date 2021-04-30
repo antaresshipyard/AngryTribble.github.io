@@ -147,7 +147,7 @@ factions: ["federation"]
 		id: "W215",
 		set: ["75011"],
 		name: "Experimental Torpedo Bay",
-		text: "<b>Not Released Yet</b>\n<b>START OF THE GAME:</b> Place a Torpedo [weapon] Upgrade with a printed SP cost of 5 or less face down beneath this card.\n----------------------------------------\n<b>COMBAT PHASE:</b> Discard this card.\nFlip the card beneath this card face up and equip it to this ship, ignoring restrictions. (Utopia Note: Code Unfinished)",
+		text: "<b>Not Released Yet</b>\n<b>START OF THE GAME:</b> Place a Torpedo [weapon] Upgrade with a printed SP cost of 5 or less face down beneath this card.\n----------------------------------------\n<b>COMBAT PHASE:</b> Discard this card.\nFlip the card beneath this card face up and equip it to this ship, ignoring restrictions. (Utopia Note: Code still in progress)",
 		cost: 2,
 		unique: true,
 		factions: ["federation"],

@@ -147,7 +147,7 @@ module.exports = [{
 	class: "Akira Class",
 	actions: ["evade", "target-lock", "scan", "battlestations"],
 	upgrades: ["tech","weapon","weapon", "weapon", "crew"],
-	text: "<b>Not Released Yet</b>\nFederation [weapon] Upgrades equipped to this ship cost -1 SP.\n-----------------------------------\n<b>WHEN ATTACKING WITH A PHOTON TORPEDOS UPGRADE, DURING THE MODIFY ATTACK DICE STEP:</b>\n\nDestroy 1 Active Shield on the defending ship. (Utopia Note: Code not yet added).",
+	text: "<b>Not Released Yet</b>\nFederation [weapon] Upgrades equipped to this ship cost -1 SP.<b>WHEN ATTACKING WITH A PHOTON TORPEDOS UPGRADE, DURING THE MODIFY ATTACK DICE STEP:</b>\nDestroy 1 Active Shield on the defending ship. (Utopia Note: Code not yet added).",
 	attack: 4,
 	agility: 2,
 	hull: 5,
@@ -221,7 +221,7 @@ module.exports = [{
 	hull: 3,
 	shields: 2,
 	cost: 16,
-	text: "<b>Not Released Yet</b>\n\nAbility not yet revealed",
+	text: "<b>Not Released Yet</b>\n<b>WHEN ATTACKING A SHIP WITH A HULL OF 4 OR GREATER:</b> Steal a [scan] Token, a [battlestations] Token, or an [evade] Token from beside the defending ship and place it beside this ship.\n<b>WHEN ATTACKING A KLINGON SHIP OR A SHIP WITH A KLINGON CAPTAIN EQUIPPED TO IT:</b> Add 1 [hit]. ",
 	unique: true,
 	factions: ["klingon","independent"],
 	squadron: false
