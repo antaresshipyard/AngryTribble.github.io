@@ -6209,12 +6209,22 @@ module.factory( "cardRules", [ "$filter", "$factions", function($filter, $factio
 				return $.inArray( "tech", slotTypes ) >= 0 || $.inArray( "weapon", slotTypes ) >= 0 || $.inArray( "crew", slotTypes ) >= 0;
 			},
 			upgradeSlots: [
-				{
-					type: function(upgrade,ship) {
+				{	type: function(upgrade,ship) {
 						return getSlotType(upgrade,ship);
 					}
+				 },
+					{type: ["tech"]
 				}
-			]
+			],
+			intercept: {
+				ship: {
+					skill: function(card,ship,fleet,skill) {
+						if( card == ship.captain )
+							return resolve(card,ship,fleet,skill) + 2;
+						return skill;
+					}
+				}
+			}
 		},
 
 	//Denorious :71211
