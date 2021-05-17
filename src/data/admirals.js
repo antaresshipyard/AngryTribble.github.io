@@ -1,4 +1,16 @@
-module.exports = [{
+module.exports = [
+	{	 type: "admiral",
+		 id: "A037",
+		 set: ["75011"],
+		 name: "Leyton",
+		 unique: true,
+		 text: "ACTION:</b> Target a ship and place 2 [time] Tokens on this card.\n\nThe target ship attacks last this turn.",
+		 factions: ["federation"],
+		 cost: 4,
+		 skill: 2,
+		 talents: 1,
+		 range: "1 - 2"
+	 },{
 	type: "admiral",
 	id: "A035",
 	set: ["75006"],
